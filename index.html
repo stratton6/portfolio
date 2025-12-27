@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elisha Straton Kimario | 3D Portfolio</title>
     <style>
+        :root {
+            --primary-red: #E31E24;
+            --accent-red: #FF4D4D;
+            --dark-red: #8B0000;
+            --gradient-red: linear-gradient(135deg, #E31E24 0%, #8B0000 100%);
+            --glow-red: rgba(227, 30, 36, 0.4);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -77,10 +85,27 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            filter: drop-shadow(0 0 10px var(--glow-red));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .logo-text {
             font-size: 18px;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-red);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -109,7 +134,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-red);
             transition: width 0.3s;
         }
 
@@ -148,7 +173,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-red);
             border: none;
             cursor: pointer;
             display: flex;
@@ -191,7 +216,7 @@
 
         .volume-bar {
             height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-red);
             border-radius: 2px;
             width: 70%;
             transition: width 0.2s;
@@ -234,7 +259,7 @@
             height: 400px;
             border-radius: 30px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 20px 50px var(--glow-red);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -308,14 +333,14 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-red);
             color: #fff;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px var(--glow-red);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 15px 40px var(--glow-red);
         }
 
         .btn-secondary {
@@ -329,6 +354,127 @@
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-3px);
+        }
+
+        /* Entry Overlay */
+        #entry-overlay {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 1s, visibility 1s;
+        }
+
+        .loader-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .loader-percentage {
+            font-size: clamp(60px, 10vw, 120px);
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -5px;
+        }
+
+        .loader-bar-bg {
+            width: 250px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loader-bar-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: var(--gradient-red);
+            transition: width 0.1s linear;
+            box-shadow: 0 0 15px var(--glow-red);
+        }
+
+        .enter-btn {
+            display: none;
+            opacity: 0;
+            padding: 22px 60px;
+            background: var(--gradient-red);
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            box-shadow: 0 0 30px var(--glow-red);
+            transform: translateY(20px);
+        }
+
+        .enter-btn.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .enter-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px var(--glow-red);
+        }
+
+        /* Logo Animations */
+        @keyframes floatLogo {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.02);
+            }
+        }
+
+        .loader-logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 20px var(--glow-red));
+            animation: floatLogo 4s ease-in-out infinite;
+        }
+
+        .footer-logo {
+            height: 30px;
+            width: auto;
+            margin-bottom: 20px;
+            filter: grayscale(1) opacity(0.5);
+            transition: all 0.3s;
+        }
+
+        .footer-logo:hover {
+            filter: grayscale(0) opacity(1);
+            transform: scale(1.1);
+        }
+
+        /* Adjust content for multi-page */
+        .content {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .content.visible {
+            opacity: 1;
         }
 
         /* Profile Section */
@@ -368,7 +514,7 @@
             width: 250px;
             height: 250px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-red);
             margin: 0 auto 30px;
             display: flex;
             align-items: center;
@@ -378,7 +524,7 @@
             color: #fff;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 20px 60px var(--glow-red);
         }
 
         .profile-image-placeholder::before {
@@ -437,7 +583,7 @@
         }
 
         .social-link:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-red);
             transform: translateY(-5px);
         }
 
@@ -478,8 +624,8 @@
         }
 
         .skill-tag:hover {
-            background: rgba(102, 126, 234, 0.2);
-            border-color: rgba(102, 126, 234, 0.5);
+            background: rgba(227, 30, 36, 0.1);
+            border-color: rgba(227, 30, 36, 0.3);
             transform: translateY(-3px);
         }
 
@@ -531,13 +677,13 @@
 
         .project-card:hover {
             transform: translateY(-20px) rotateX(5deg);
-            box-shadow: 0 30px 60px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 30px 60px var(--glow-red);
         }
 
         .project-image-box {
             width: 100%;
             height: 250px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-red);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -590,8 +736,8 @@
         }
 
         .project-tag {
-            background: rgba(102, 126, 234, 0.2);
-            color: #667eea;
+            background: rgba(227, 30, 36, 0.1);
+            color: var(--primary-red);
             padding: 6px 15px;
             border-radius: 15px;
             font-size: 12px;
@@ -602,7 +748,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #667eea;
+            color: var(--primary-red);
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
@@ -643,7 +789,7 @@
             width: 100px;
             height: 100px;
             margin: 0 auto 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-red);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -940,7 +1086,19 @@
     <div id="canvas-container"></div>
 
     <!-- Background Music -->
-    <audio id="bgMusic" src="music.wav" loop></audio>
+    <audio id="bgMusic" src="music.wav" loop autoplay muted></audio>
+
+    <!-- Entry Overlay -->
+    <div id="entry-overlay">
+        <div class="loader-container">
+            <img src="logo.png" alt="Logo" class="loader-logo">
+            <div class="loader-percentage" id="loaderPercentage">00</div>
+            <div class="loader-bar-bg">
+                <div class="loader-bar-fill" id="loaderBarFill"></div>
+            </div>
+        </div>
+        <button class="enter-btn" id="enterBtn">ENTER EXPERIENCE</button>
+    </div>
 
     <!-- Music Player -->
     <div class="music-player">
@@ -956,13 +1114,16 @@
 
     <div class="content">
         <header>
-            <div class="logo">ESK</div>
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Logo">
+                <span class="logo-text">ESK</span>
+            </a>
             <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#work">Work</a>
-                <a href="#cv">CV</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="work.html">Work</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </header>
 
@@ -979,8 +1140,8 @@
                         Transforming ideas into stunning realities.
                     </p>
                     <div class="cta-buttons">
-                        <a href="#work" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="work.html" class="btn btn-primary">View My Work</a>
+                        <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
                     </div>
                 </div>
                 <div class="hero-image-container">
@@ -992,164 +1153,12 @@
         </section>
 
         <div class="scroll-indicator">
-            <span class="scroll-text">Scroll</span>
+            <span class="scroll-text">Scroll Down for Quick Links</span>
             <div class="scroll-line"></div>
         </div>
 
-        <!-- Profile Section -->
-        <section class="profile-section" id="about">
-            <div class="profile-container">
-                <div class="profile-card">
-                    <div class="profile-image-placeholder">ESK</div>
-                    <div class="profile-name">Elisha Straton Kimario</div>
-                    <div class="profile-role">Full-Stack Developer & UI/UX Designer</div>
-                    <div class="social-links">
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">𝕏</a>
-                        <a href="#" class="social-link">GH</a>
-                        <a href="#" class="social-link">✉</a>
-                    </div>
-                </div>
-                <div class="profile-details">
-                    <div class="detail-section">
-                        <h3>About Me</h3>
-                        <p>
-                            I'm an AI Engineer and Data Scientist specializing in Robotics and Cybersecurity.
-                            With over 5 years of experience, I build intelligent systems that bridge the gap
-                            between the digital and physical worlds, ensuring they are both smart and secure.
-                        </p>
-                    </div>
-                    <div class="detail-section">
-                        <h3>Skills</h3>
-                        <div class="skills-grid">
-                            <div class="skill-tag">Python</div>
-                            <div class="skill-tag">PyTorch</div>
-                            <div class="skill-tag">TensorFlow</div>
-                            <div class="skill-tag">ROS2</div>
-                            <div class="skill-tag">C++</div>
-                            <div class="skill-tag">Penetration Testing</div>
-                            <div class="skill-tag">React</div>
-                            <div class="skill-tag">Three.js</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="projects-section" id="work">
-            <div class="section-header">
-                <h2 class="section-title">Featured Work</h2>
-                <p class="section-subtitle">A collection of my recent projects</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image-box">🚀</div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI Object Detection</h3>
-                        <p class="project-description">
-                            Custom deep learning pipeline for real-time edge computing on autonomous drones,
-                            achieving high accuracy in diverse environmental conditions.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">YOLOv8</span>
-                            <span class="project-tag">TensorRT</span>
-                        </div>
-                        <a href="#" class="project-link">Explore Model →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-box">🎨</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Robotic Swarm Control</h3>
-                        <p class="project-description">
-                            Decentralized coordination algorithms for robotic swarms, enabling
-                            collaborative mapping and search-and-rescue operations.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">C++</span>
-                            <span class="project-tag">ROS2</span>
-                            <span class="project-tag">OpenCV</span>
-                        </div>
-                        <a href="#" class="project-link">Watch Demo →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-box">📱</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Network Intrusion Detection</h3>
-                        <p class="project-description">
-                            Machine learning-based IDS that identifies zero-day vulnerabilities
-                            and anomalous traffic patterns in real-time.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Scikit-learn</span>
-                            <span class="project-tag">Wireshark</span>
-                            <span class="project-tag">Pandas</span>
-                        </div>
-                        <a href="#" class="project-link">View Case Study →</a>
-                    </div>
-                </div>
-                <!-- Reconstructing truncated 4th project -->
-                <div class="project-card">
-                    <div class="project-image-box">🎮</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Predictive Maintenance AI</h3>
-                        <p class="project-description">
-                            LSTM-based predictive maintenance for industrial machinery,
-                            reducing downtime by 35% through early failure detection.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Keras</span>
-                            <span class="project-tag">Docker</span>
-                            <span class="project-tag">InfluxDB</span>
-                        </div>
-                        <a href="#" class="project-link">Read Whitepaper →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Reconstructing CV Download Section -->
-        <section class="cv-section" id="cv">
-            <div class="cv-card">
-                <div class="cv-icon">📄</div>
-                <h2 class="cv-title">Download My Resume</h2>
-                <p class="cv-description">
-                    Interested in working together? Get a detailed overview of my professional
-                    background and technical expertise.
-                </p>
-                <a href="#" class="btn btn-primary">Download CV (PDF)</a>
-            </div>
-        </section>
-
-        <!-- Reconstructing Contact Section -->
-        <section class="contact-section" id="contact">
-            <div class="contact-container">
-                <div class="section-header">
-                    <h2 class="section-title">Get In Touch</h2>
-                    <p class="section-subtitle">Let's build something amazing together</p>
-                </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label class="form-label">Name</label>
-                        <input type="text" class="form-input" placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-input" placeholder="your@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Message</label>
-                        <textarea class="form-textarea" placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                </form>
-            </div>
-        </section>
-
         <footer>
+            <img src="logo.png" alt="Logo" class="footer-logo">
             <p>&copy; 2025 Elisha Straton Kimario. All rights reserved.</p>
         </footer>
 
@@ -1231,7 +1240,7 @@
 
         const particlesMaterial = new THREE.PointsMaterial({
             size: 0.02,
-            color: 0x667eea,
+            color: 0xE31E24,
             transparent: true,
             opacity: 0.8,
             blending: THREE.AdditiveBlending
@@ -1243,7 +1252,7 @@
         // Create geometric shapes
         const torusGeometry = new THREE.TorusGeometry(1.5, 0.4, 16, 100);
         const torusMaterial = new THREE.MeshStandardMaterial({
-            color: 0x764ba2,
+            color: 0x8B0000,
             wireframe: true,
             transparent: true,
             opacity: 0.3
@@ -1266,11 +1275,11 @@
         scene.add(sphere);
 
         // Lighting
-        const pointLight = new THREE.PointLight(0x667eea, 2);
+        const pointLight = new THREE.PointLight(0xE31E24, 2);
         pointLight.position.set(5, 5, 5);
         scene.add(pointLight);
 
-        const ambientLight = new THREE.AmbientLight(0x764ba2, 0.5);
+        const ambientLight = new THREE.AmbientLight(0x8B0000, 0.5);
         scene.add(ambientLight);
 
         // Mouse interaction
@@ -1308,12 +1317,72 @@
 
         animate();
 
-        // Music Player Logic
+        // Music Player & Loader Logic
         const playBtn = document.getElementById('playBtn');
         const volumeControl = document.getElementById('volumeControl');
         const volumeBar = document.getElementById('volumeBar');
         const bgMusic = document.getElementById('bgMusic');
+        const entryOverlay = document.getElementById('entry-overlay');
+        const enterBtn = document.getElementById('enterBtn');
+        const content = document.querySelector('.content');
+        const loaderPercentage = document.getElementById('loaderPercentage');
+        const loaderBarFill = document.getElementById('loaderBarFill');
+        const loaderContainer = document.querySelector('.loader-container');
+
         let isPlaying = false;
+        let progress = 0;
+
+        function updateLoader() {
+            if (progress < 100) {
+                progress += Math.random() * 2.5;
+                if (progress > 100) progress = 100;
+                loaderPercentage.textContent = Math.floor(progress).toString().padStart(2, '0');
+                loaderBarFill.style.width = progress + '%';
+                requestAnimationFrame(updateLoader);
+            } else {
+                setTimeout(() => {
+                    loaderContainer.style.opacity = '0';
+                    setTimeout(() => {
+                        loaderContainer.style.display = 'none';
+                        enterBtn.classList.add('visible');
+                    }, 500);
+                }, 500);
+            }
+        }
+
+        if (sessionStorage.getItem('experienceStarted') !== 'true') {
+            updateLoader();
+        }
+
+        enterBtn.addEventListener('click', () => {
+            entryOverlay.style.opacity = '0';
+            setTimeout(() => {
+                entryOverlay.style.display = 'none';
+                content.classList.add('visible');
+                sessionStorage.setItem('experienceStarted', 'true');
+                bgMusic.muted = false;
+                bgMusic.play().then(() => {
+                    isPlaying = true;
+                    playBtn.textContent = '⏸';
+                }).catch(e => console.log("Autoplay failed:", e));
+            }, 1000);
+        });
+
+        // Check if experience already started
+        if (sessionStorage.getItem('experienceStarted') === 'true') {
+            entryOverlay.style.display = 'none';
+            content.classList.add('visible');
+            bgMusic.muted = false;
+            bgMusic.play().then(() => {
+                isPlaying = true;
+                playBtn.textContent = '⏸';
+            }).catch(e => {
+                console.log("Autoplay blocked, showing overlay");
+                entryOverlay.style.display = 'flex';
+                content.classList.remove('visible');
+                updateLoader();
+            });
+        }
 
         // Initialize volume
         bgMusic.volume = 0.7;
