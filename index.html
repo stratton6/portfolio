@@ -5,12 +5,324 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elisha Straton Kimario | 3D Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&family=Orbitron:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .custom-cursor {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            mix-blend-mode: difference;
+            transition: transform 0.2s ease;
+        }
+
+        .cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.15s ease-out;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+            pointer-events: all;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 60px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-title {
+            font-size: clamp(48px, 8vw, 120px);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.5) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-description {
+            font-size: clamp(18px, 2vw, 24px);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.8s both;
+            pointer-events: all;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            animation: fadeIn 1s ease 1s both;
+        }
+
+        .scroll-text {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, transparent 100%);
+            animation: scrollAnimation 2s ease-in-out infinite;
+        }
+
+        .floating-cards {
+            position: fixed;
+            top: 50%;
+            right: 60px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 50;
+            pointer-events: all;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            min-width: 200px;
+            transition: all 0.3s;
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(-10px);
+        }
+
+        .info-card-label {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .info-card-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scrollAnimation {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            header,
+            .hero {
+                padding: 30px;
+            }
+
+            nav {
+                gap: 20px;
+            }
+
+            .floating-cards {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -21,73 +333,27 @@
 
     <div class="content">
         <header>
-            <div class="logo">ELISHA.STRATON</div>
+            <div class="logo">ESK</div>
             <nav>
-                <a href="#hero">Initiate</a>
-                <a href="#domains">Domains</a>
-                <a href="#terminal">Security</a>
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </nav>
         </header>
 
-        <section id="hero" class="hero">
-            <div class="hero-subtitle">AI & Data Scientist | Robotics Engineer | Hacker</div>
+        <section class="hero">
+            <div class="hero-subtitle">Creative Developer & Designer</div>
             <h1 class="hero-title">
                 Elisha Straton<br>
                 Kimario
             </h1>
             <p class="hero-description">
-                Bridging the gap between biological intelligence and synthetic consciousness.
-                Pioneering autonomous robotics and hardening the digital frontier.
+                Crafting immersive digital experiences through innovative design and cutting-edge development.
+                Transforming ideas into stunning realities.
             </p>
             <div class="cta-buttons">
-                <a href="#domains" class="btn btn-primary">Systems Overview</a>
-                <a href="#terminal" class="btn btn-secondary">Access Terminal</a>
-            </div>
-        </section>
-
-        <!-- New Domains Section -->
-        <section id="domains" class="section-container">
-            <div class="section-badge">CORE_SYSTEMS</div>
-            <div class="grid-domains">
-                <div class="info-card domain-card">
-                    <div class="info-card-label">AI_ENGINE</div>
-                    <div class="info-card-value">Neural Net Architecture</div>
-                    <p class="domain-desc">Deep learning, Large Language Models (LLMs), and predictive analytics powered
-                        by advanced data science.</p>
-                </div>
-                <div class="info-card domain-card">
-                    <div class="info-card-label">ROBOTICS</div>
-                    <div class="info-card-value">Kinematic Systems</div>
-                    <p class="domain-desc">Autonomous motion, computer vision integration, and embedded control systems
-                        for industrial automation.</p>
-                </div>
-                <div class="info-card domain-card">
-                    <div class="info-card-label">SECURITY</div>
-                    <div class="info-card-value">Cyber Defense / Offensive</div>
-                    <p class="domain-desc">Penetration testing, cryptographic security, and hardening infrastructures
-                        against adversarial attacks.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- New Terminal Placeholder Section -->
-        <section id="terminal" class="section-container terminal-section">
-            <div class="terminal-header">
-                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                <span class="terminal-title">system@elisha-kimario: ~</span>
-            </div>
-            <div class="terminal-body">
-                <p class="terminal-line"><span class="cmd-prefix">$</span> run personality_module.sh</p>
-                <p class="terminal-output">> Loading attributes...</p>
-                <p class="terminal-output">> [SUCCESS] Passion for decentralized systems detected.</p>
-                <p class="terminal-line"><span class="cmd-prefix">$</span> scan projects --type="3d"</p>
-                <div class="project-matrix">
-                    <div class="project-item">[Project Alpha: Neural Mesh]</div>
-                    <div class="project-item">[Project Beta: Hexa-Leg Robotics]</div>
-                    <div class="project-item">[Project Gamma: Zero-Day Audit]</div>
-                </div>
-                <p class="terminal-line blink-cursor">_</p>
+                <a href="#work" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
         </section>
 
@@ -102,18 +368,162 @@
                 <div class="info-card-value">Arusha, TZ</div>
             </div>
             <div class="info-card">
-                <div class="info-card-label">Status</div>
-                <div class="info-card-value">Active Core</div>
+                <div class="info-card-label">Available For</div>
+                <div class="info-card-value">Freelance</div>
             </div>
             <div class="info-card">
-                <div class="info-card-label">Uptime</div>
-                <div class="info-card-value">99.9%</div>
+                <div class="info-card-label">Experience</div>
+                <div class="info-card-value">5+ Years</div>
             </div>
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="main.js"></script>
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.custom-cursor');
+        const follower = document.querySelector('.cursor-follower');
+        let mouseX = 0, mouseY = 0;
+        let followerX = 0, followerY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+        });
+
+        function animateFollower() {
+            followerX += (mouseX - followerX) * 0.1;
+            followerY += (mouseY - followerY) * 0.1;
+            follower.style.left = (followerX - 20) + 'px';
+            follower.style.top = (followerY - 20) + 'px';
+            requestAnimationFrame(animateFollower);
+        }
+        animateFollower();
+
+        // Hover effects
+        const interactiveElements = document.querySelectorAll('a, button, .btn, .info-card');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(2)';
+                follower.style.transform = 'scale(1.5)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                follower.style.transform = 'scale(1)';
+            });
+        });
+
+        // Three.js Scene
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        camera.position.z = 5;
+
+        // Create particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 2000;
+        const posArray = new Float32Array(particlesCount * 3);
+
+        for (let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 20;
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0x667eea,
+            transparent: true,
+            opacity: 0.8,
+            blending: THREE.AdditiveBlending
+        });
+
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+
+        // Create geometric shapes
+        const torusGeometry = new THREE.TorusGeometry(1.5, 0.4, 16, 100);
+        const torusMaterial = new THREE.MeshStandardMaterial({
+            color: 0x764ba2,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.3
+        });
+        const torus = new THREE.Mesh(torusGeometry, torusMaterial);
+        torus.position.x = -3;
+        torus.position.y = 1;
+        scene.add(torus);
+
+        const sphereGeometry = new THREE.SphereGeometry(0.8, 32, 32);
+        const sphereMaterial = new THREE.MeshStandardMaterial({
+            color: 0x667eea,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.3
+        });
+        const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+        sphere.position.x = 3;
+        sphere.position.y = -1;
+        scene.add(sphere);
+
+        // Lighting
+        const pointLight = new THREE.PointLight(0x667eea, 2);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        const ambientLight = new THREE.AmbientLight(0x764ba2, 0.5);
+        scene.add(ambientLight);
+
+        // Mouse interaction
+        let mouseXPos = 0;
+        let mouseYPos = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseXPos = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseYPos = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        // Animation loop
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.001;
+
+            // Rotate shapes
+            torus.rotation.x += 0.005;
+            torus.rotation.y += 0.003;
+            sphere.rotation.x += 0.003;
+            sphere.rotation.y += 0.005;
+
+            // Animate particles
+            particlesMesh.rotation.y = time * 0.5;
+            particlesMesh.rotation.x = Math.sin(time) * 0.2;
+
+            // Mouse parallax
+            camera.position.x += (mouseXPos * 0.5 - camera.position.x) * 0.05;
+            camera.position.y += (mouseYPos * 0.5 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
 </body>
 
 </html>
