@@ -935,6 +935,9 @@
 
     <div id="canvas-container"></div>
 
+    <!-- Background Music -->
+    <audio id="bgMusic" src="music.wav" loop></audio>
+
     <!-- Music Player -->
     <div class="music-player">
         <button class="play-btn" id="playBtn">▶</button>
@@ -1305,12 +1308,18 @@
         const playBtn = document.getElementById('playBtn');
         const volumeControl = document.getElementById('volumeControl');
         const volumeBar = document.getElementById('volumeBar');
+        const bgMusic = document.getElementById('bgMusic');
         let isPlaying = false;
 
         playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                playBtn.textContent = '▶';
+            } else {
+                bgMusic.play().catch(e => console.log("Audio play failed: ", e));
+                playBtn.textContent = '⏸';
+            }
             isPlaying = !isPlaying;
-            playBtn.textContent = isPlaying ? '⏸' : '▶';
-            // In a real app, you would play/pause an actual Audio object here
         });
 
         volumeControl.addEventListener('click', (e) => {
@@ -1318,6 +1327,7 @@
             const x = e.clientX - rect.left;
             const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
             volumeBar.style.width = percentage + '%';
+            bgMusic.volume = percentage / 100;
         });
 
         // Resize handler
