@@ -12,6 +12,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #000;
@@ -1010,22 +1014,22 @@
                     <div class="detail-section">
                         <h3>About Me</h3>
                         <p>
-                            I'm a passionate developer and designer with 5+ years of experience creating
-                            exceptional digital experiences. I specialize in building modern web applications
-                            with stunning user interfaces and robust functionality.
+                            I'm an AI Engineer and Data Scientist specializing in Robotics and Cybersecurity.
+                            With over 5 years of experience, I build intelligent systems that bridge the gap
+                            between the digital and physical worlds, ensuring they are both smart and secure.
                         </p>
                     </div>
                     <div class="detail-section">
                         <h3>Skills</h3>
                         <div class="skills-grid">
-                            <div class="skill-tag">JavaScript</div>
+                            <div class="skill-tag">Python</div>
+                            <div class="skill-tag">PyTorch</div>
+                            <div class="skill-tag">TensorFlow</div>
+                            <div class="skill-tag">ROS2</div>
+                            <div class="skill-tag">C++</div>
+                            <div class="skill-tag">Penetration Testing</div>
                             <div class="skill-tag">React</div>
-                            <div class="skill-tag">Node.js</div>
                             <div class="skill-tag">Three.js</div>
-                            <div class="skill-tag">UI/UX</div>
-                            <div class="skill-tag">WebGL</div>
-                            <div class="skill-tag">CSS3</div>
-                            <div class="skill-tag">TypeScript</div>
                         </div>
                     </div>
                 </div>
@@ -1042,66 +1046,66 @@
                 <div class="project-card">
                     <div class="project-image-box">🚀</div>
                     <div class="project-content">
-                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <h3 class="project-title">AI Object Detection</h3>
                         <p class="project-description">
-                            A modern e-commerce platform with real-time inventory management,
-                            payment integration, and advanced analytics dashboard.
+                            Custom deep learning pipeline for real-time edge computing on autonomous drones,
+                            achieving high accuracy in diverse environmental conditions.
                         </p>
                         <div class="project-tags">
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">Node.js</span>
-                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">YOLOv8</span>
+                            <span class="project-tag">TensorRT</span>
                         </div>
-                        <a href="#" class="project-link">View Project →</a>
+                        <a href="#" class="project-link">Explore Model →</a>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-image-box">🎨</div>
                     <div class="project-content">
-                        <h3 class="project-title">3D Portfolio Website</h3>
+                        <h3 class="project-title">Robotic Swarm Control</h3>
                         <p class="project-description">
-                            An interactive 3D portfolio showcasing creative work with immersive
-                            WebGL animations and smooth transitions.
+                            Decentralized coordination algorithms for robotic swarms, enabling
+                            collaborative mapping and search-and-rescue operations.
                         </p>
                         <div class="project-tags">
-                            <span class="project-tag">Three.js</span>
-                            <span class="project-tag">WebGL</span>
-                            <span class="project-tag">GSAP</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">ROS2</span>
+                            <span class="project-tag">OpenCV</span>
                         </div>
-                        <a href="#" class="project-link">View Project →</a>
+                        <a href="#" class="project-link">Watch Demo →</a>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-image-box">📱</div>
                     <div class="project-content">
-                        <h3 class="project-title">Social Media App</h3>
+                        <h3 class="project-title">Network Intrusion Detection</h3>
                         <p class="project-description">
-                            A feature-rich social networking platform with real-time messaging,
-                            stories, and advanced content discovery algorithms.
+                            Machine learning-based IDS that identifies zero-day vulnerabilities
+                            and anomalous traffic patterns in real-time.
                         </p>
                         <div class="project-tags">
-                            <span class="project-tag">React Native</span>
-                            <span class="project-tag">Firebase</span>
-                            <span class="project-tag">Redux</span>
+                            <span class="project-tag">Scikit-learn</span>
+                            <span class="project-tag">Wireshark</span>
+                            <span class="project-tag">Pandas</span>
                         </div>
-                        <a href="#" class="project-link">View Project →</a>
+                        <a href="#" class="project-link">View Case Study →</a>
                     </div>
                 </div>
                 <!-- Reconstructing truncated 4th project -->
                 <div class="project-card">
                     <div class="project-image-box">🎮</div>
                     <div class="project-content">
-                        <h3 class="project-title">3D Space Shooter</h3>
+                        <h3 class="project-title">Predictive Maintenance AI</h3>
                         <p class="project-description">
-                            A high-performance 3D space shooter game built for browsers,
-                            featuring particle systems and custom physics.
+                            LSTM-based predictive maintenance for industrial machinery,
+                            reducing downtime by 35% through early failure detection.
                         </p>
                         <div class="project-tags">
-                            <span class="project-tag">Three.js</span>
-                            <span class="project-tag">Cannon.js</span>
-                            <span class="project-tag">GLSL</span>
+                            <span class="project-tag">Keras</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">InfluxDB</span>
                         </div>
-                        <a href="#" class="project-link">View Project →</a>
+                        <a href="#" class="project-link">Read Whitepaper →</a>
                     </div>
                 </div>
             </div>
@@ -1310,6 +1314,9 @@
         const volumeBar = document.getElementById('volumeBar');
         const bgMusic = document.getElementById('bgMusic');
         let isPlaying = false;
+
+        // Initialize volume
+        bgMusic.volume = 0.7;
 
         playBtn.addEventListener('click', () => {
             if (isPlaying) {
