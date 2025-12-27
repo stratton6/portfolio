@@ -68,6 +68,8 @@
             justify-content: space-between;
             align-items: center;
             z-index: 100;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         .logo {
@@ -113,6 +115,82 @@
 
         nav a:hover::after {
             width: 100%;
+        }
+
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 100;
+            pointer-events: all;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 60px;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s;
+        }
+
+        .music-player:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .play-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .music-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .music-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .music-artist {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .volume-control {
+            width: 80px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .volume-bar {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+            width: 70%;
+            transition: width 0.2s;
         }
 
         .hero {
@@ -249,6 +327,410 @@
             transform: translateY(-3px);
         }
 
+        /* Profile Section */
+        .profile-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 60px;
+            pointer-events: all;
+        }
+
+        .profile-container {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
+            max-width: 1400px;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .profile-card:hover {
+            transform: rotateY(5deg) rotateX(5deg);
+        }
+
+        .profile-image-placeholder {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            font-weight: 900;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+        }
+
+        .profile-image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .profile-role {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: translateY(-5px);
+        }
+
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .detail-section h3 {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .detail-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.5);
+            transform: translateY(-3px);
+        }
+
+        /* Projects Section */
+        .projects-section {
+            min-height: 100vh;
+            padding: 100px 60px;
+            pointer-events: all;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: clamp(48px, 6vw, 80px);
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.5) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            overflow: hidden;
+            transition: all 0.5s;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            box-shadow: 0 30px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        .project-image-box {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image-box::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: projectShine 3s infinite;
+        }
+
+        @keyframes projectShine {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-tag {
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            gap: 15px;
+        }
+
+        /* CV Download Section */
+        .cv-section {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 60px;
+            pointer-events: all;
+        }
+
+        .cv-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+            max-width: 600px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .cv-card:hover {
+            transform: scale(1.05) rotateY(5deg);
+        }
+
+        .cv-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .cv-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .cv-description {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 40px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 60px;
+            pointer-events: all;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
         .scroll-indicator {
             position: absolute;
             bottom: 50px;
@@ -329,6 +811,14 @@
             }
         }
 
+        footer {
+            padding: 60px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            pointer-events: all;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -392,10 +882,25 @@
             }
         }
 
+        @media (max-width: 1024px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
 
             header,
-            .hero {
+            .hero,
+            .profile-section,
+            .projects-section,
+            .cv-section,
+            .contact-section {
                 padding: 30px;
             }
 
@@ -414,6 +919,12 @@
             .btn {
                 text-align: center;
             }
+
+            .music-player {
+                bottom: 20px;
+                left: 20px;
+                padding: 12px 20px;
+            }
         }
     </style>
 </head>
@@ -424,17 +935,31 @@
 
     <div id="canvas-container"></div>
 
+    <!-- Music Player -->
+    <div class="music-player">
+        <button class="play-btn" id="playBtn">▶</button>
+        <div class="music-info">
+            <div class="music-title">Portfolio Theme</div>
+            <div class="music-artist">Background Music</div>
+        </div>
+        <div class="volume-control" id="volumeControl">
+            <div class="volume-bar" id="volumeBar"></div>
+        </div>
+    </div>
+
     <div class="content">
         <header>
             <div class="logo">ESK</div>
             <nav>
-                <a href="#work">Work</a>
+                <a href="#home">Home</a>
                 <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#cv">CV</a>
                 <a href="#contact">Contact</a>
             </nav>
         </header>
 
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-subtitle">Creative Developer & Designer</div>
@@ -463,6 +988,163 @@
             <span class="scroll-text">Scroll</span>
             <div class="scroll-line"></div>
         </div>
+
+        <!-- Profile Section -->
+        <section class="profile-section" id="about">
+            <div class="profile-container">
+                <div class="profile-card">
+                    <div class="profile-image-placeholder">ESK</div>
+                    <div class="profile-name">Elisha Straton Kimario</div>
+                    <div class="profile-role">Full-Stack Developer & UI/UX Designer</div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link">GH</a>
+                        <a href="#" class="social-link">✉</a>
+                    </div>
+                </div>
+                <div class="profile-details">
+                    <div class="detail-section">
+                        <h3>About Me</h3>
+                        <p>
+                            I'm a passionate developer and designer with 5+ years of experience creating
+                            exceptional digital experiences. I specialize in building modern web applications
+                            with stunning user interfaces and robust functionality.
+                        </p>
+                    </div>
+                    <div class="detail-section">
+                        <h3>Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-tag">JavaScript</div>
+                            <div class="skill-tag">React</div>
+                            <div class="skill-tag">Node.js</div>
+                            <div class="skill-tag">Three.js</div>
+                            <div class="skill-tag">UI/UX</div>
+                            <div class="skill-tag">WebGL</div>
+                            <div class="skill-tag">CSS3</div>
+                            <div class="skill-tag">TypeScript</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section" id="work">
+            <div class="section-header">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">A collection of my recent projects</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image-box">🚀</div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">
+                            A modern e-commerce platform with real-time inventory management,
+                            payment integration, and advanced analytics dashboard.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-box">🎨</div>
+                    <div class="project-content">
+                        <h3 class="project-title">3D Portfolio Website</h3>
+                        <p class="project-description">
+                            An interactive 3D portfolio showcasing creative work with immersive
+                            WebGL animations and smooth transitions.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Three.js</span>
+                            <span class="project-tag">WebGL</span>
+                            <span class="project-tag">GSAP</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-box">📱</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Social Media App</h3>
+                        <p class="project-description">
+                            A feature-rich social networking platform with real-time messaging,
+                            stories, and advanced content discovery algorithms.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">React Native</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">Redux</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+                <!-- Reconstructing truncated 4th project -->
+                <div class="project-card">
+                    <div class="project-image-box">🎮</div>
+                    <div class="project-content">
+                        <h3 class="project-title">3D Space Shooter</h3>
+                        <p class="project-description">
+                            A high-performance 3D space shooter game built for browsers,
+                            featuring particle systems and custom physics.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Three.js</span>
+                            <span class="project-tag">Cannon.js</span>
+                            <span class="project-tag">GLSL</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reconstructing CV Download Section -->
+        <section class="cv-section" id="cv">
+            <div class="cv-card">
+                <div class="cv-icon">📄</div>
+                <h2 class="cv-title">Download My Resume</h2>
+                <p class="cv-description">
+                    Interested in working together? Get a detailed overview of my professional
+                    background and technical expertise.
+                </p>
+                <a href="#" class="btn btn-primary">Download CV (PDF)</a>
+            </div>
+        </section>
+
+        <!-- Reconstructing Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's build something amazing together</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-input" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-textarea" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Elisha Straton Kimario. All rights reserved.</p>
+        </footer>
 
         <div class="floating-cards">
             <div class="info-card">
@@ -618,6 +1300,25 @@
         }
 
         animate();
+
+        // Music Player Logic
+        const playBtn = document.getElementById('playBtn');
+        const volumeControl = document.getElementById('volumeControl');
+        const volumeBar = document.getElementById('volumeBar');
+        let isPlaying = false;
+
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            playBtn.textContent = isPlaying ? '⏸' : '▶';
+            // In a real app, you would play/pause an actual Audio object here
+        });
+
+        volumeControl.addEventListener('click', (e) => {
+            const rect = volumeControl.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+            volumeBar.style.width = percentage + '%';
+        });
 
         // Resize handler
         window.addEventListener('resize', () => {
