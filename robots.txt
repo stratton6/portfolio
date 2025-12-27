@@ -4,7 +4,7 @@ Allow: /
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://elishastraton.com/sitemap.xml
+Sitemap: https://elishastraton.org/sitemap.xml
 
 # Crawl delay (in seconds) - prevents server overload
 Crawl-delay: 1
