@@ -4,71 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI & Robotics Portfolio | Cyber-Explorer</title>
-    <meta name="description" content="Portfolio of a Data Scientist, Robotics Engineer, and Security Researcher.">
+    <title>Elisha Straton Kimario | 3D Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&family=Orbitron:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <canvas id="scene-canvas"></canvas>
-    <div class="overlay"></div>
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
 
-    <header>
-        <div class="logo">ANTIGRAVITY.CORE</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Initiate</a></li>
-                <li><a href="#domains">Domains</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Terminal</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="canvas-container"></div>
 
-    <main>
-        <section id="home" class="hero">
-            <h1 class="reveal">NEURAL FRONTIER</h1>
-            <p class="reveal">Pioneering the intersection of Artificial General Intelligence, Autonomous Robotics, and
-                Digital Security.</p>
+    <div class="content">
+        <header>
+            <div class="logo">ELISHA.STRATON</div>
+            <nav>
+                <a href="#hero">Initiate</a>
+                <a href="#domains">Domains</a>
+                <a href="#terminal">Security</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section id="hero" class="hero">
+            <div class="hero-subtitle">AI & Data Scientist | Robotics Engineer | Hacker</div>
+            <h1 class="hero-title">
+                Elisha Straton<br>
+                Kimario
+            </h1>
+            <p class="hero-description">
+                Bridging the gap between biological intelligence and synthetic consciousness.
+                Pioneering autonomous robotics and hardening the digital frontier.
+            </p>
+            <div class="cta-buttons">
+                <a href="#domains" class="btn btn-primary">Systems Overview</a>
+                <a href="#terminal" class="btn btn-secondary">Access Terminal</a>
+            </div>
         </section>
 
-        <section id="domains">
-            <h2 class="reveal" style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 2rem;">CORE
-                DOMAINS</h2>
-            <div class="grid">
-                <div class="glass-card reveal">
-                    <h3 style="color: var(--accent-ai); margin-bottom: 1rem;">AI & Data Science</h3>
-                    <p>Architecting LLMs, predictive neural networks, and scalable data pipelines for complex
-                        decision-making.</p>
+        <!-- New Domains Section -->
+        <section id="domains" class="section-container">
+            <div class="section-badge">CORE_SYSTEMS</div>
+            <div class="grid-domains">
+                <div class="info-card domain-card">
+                    <div class="info-card-label">AI_ENGINE</div>
+                    <div class="info-card-value">Neural Net Architecture</div>
+                    <p class="domain-desc">Deep learning, Large Language Models (LLMs), and predictive analytics powered
+                        by advanced data science.</p>
                 </div>
-                <div class="glass-card reveal">
-                    <h3 style="color: var(--accent-robotics); margin-bottom: 1rem;">Robotics</h3>
-                    <p>Designing autonomous agents with advanced perception, kinematic precision, and embedded control
-                        systems.</p>
+                <div class="info-card domain-card">
+                    <div class="info-card-label">ROBOTICS</div>
+                    <div class="info-card-value">Kinematic Systems</div>
+                    <p class="domain-desc">Autonomous motion, computer vision integration, and embedded control systems
+                        for industrial automation.</p>
                 </div>
-                <div class="glass-card reveal">
-                    <h3 style="color: var(--accent-hacking); margin-bottom: 1rem;">Cybersecurity</h3>
-                    <p>Penetration testing, cryptographic security, and hardening systems against sophisticated digital
-                        threats.</p>
+                <div class="info-card domain-card">
+                    <div class="info-card-label">SECURITY</div>
+                    <div class="info-card-value">Cyber Defense / Offensive</div>
+                    <p class="domain-desc">Penetration testing, cryptographic security, and hardening infrastructures
+                        against adversarial attacks.</p>
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 ANTIGRAVITY.CORE // SECURE_ACCESS_GRANTED</p>
-    </footer>
+        <!-- New Terminal Placeholder Section -->
+        <section id="terminal" class="section-container terminal-section">
+            <div class="terminal-header">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <span class="terminal-title">system@elisha-kimario: ~</span>
+            </div>
+            <div class="terminal-body">
+                <p class="terminal-line"><span class="cmd-prefix">$</span> run personality_module.sh</p>
+                <p class="terminal-output">> Loading attributes...</p>
+                <p class="terminal-output">> [SUCCESS] Passion for decentralized systems detected.</p>
+                <p class="terminal-line"><span class="cmd-prefix">$</span> scan projects --type="3d"</p>
+                <div class="project-matrix">
+                    <div class="project-item">[Project Alpha: Neural Mesh]</div>
+                    <div class="project-item">[Project Beta: Hexa-Leg Robotics]</div>
+                    <div class="project-item">[Project Gamma: Zero-Day Audit]</div>
+                </div>
+                <p class="terminal-line blink-cursor">_</p>
+            </div>
+        </section>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+
+        <div class="floating-cards">
+            <div class="info-card">
+                <div class="info-card-label">Location</div>
+                <div class="info-card-value">Arusha, TZ</div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-label">Status</div>
+                <div class="info-card-value">Active Core</div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-label">Uptime</div>
+                <div class="info-card-value">99.9%</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="main.js"></script>
 </body>
 
