@@ -4,713 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Elisha Straton Kimario - Get in touch for web development projects, consultations, or collaborations. Hire the best web developer for your next project.">
-    <meta name="keywords" content="contact, hire web developer, Elisha Straton Kimario, web development services, consultation, collaboration">
-    <meta name="author" content="Elisha Straton Kimario">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://elishastraton.com/contact">
-    <meta property="og:title" content="Contact | Elisha Straton Kimario">
-    <meta property="og:description" content="Get in touch with Elisha Straton Kimario for web development projects, consultations, and creative solutions.">
-    <meta property="og:image" content="https://elishastraton.com/logo.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://elishastraton.org/contact">
-    
-    <title>Contact Elisha Straton Kimario | Hire Best Web Developer | Get In Touch</title>
-    <style>
-        :root {
-            --primary-red: #E31E24;
-            --accent-red: #FF4D4D;
-            --dark-red: #8B0000;
-            --gradient-red: linear-gradient(135deg, #E31E24 0%, #8B0000 100%);
-            --glow-red: rgba(227, 30, 36, 0.4);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-            cursor: none;
-        }
-
-        #canvas-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: 1;
-        }
-
-        .content {
-            position: relative;
-            z-index: 10;
-            opacity: 0;
-            transition: opacity 1s;
-        }
-
-        .content.visible {
-            opacity: 1;
-        }
-
-        .custom-cursor {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: #fff;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            mix-blend-mode: difference;
-            transition: transform 0.2s ease;
-        }
-
-        .cursor-follower {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.15s ease-out;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 40px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-            filter: drop-shadow(0 0 10px var(--glow-red));
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover img {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .logo-text {
-            font-size: 18px;
-            font-weight: 700;
-            background: var(--gradient-red);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        nav {
-            display: flex;
-            gap: 40px;
-            pointer-events: all;
-        }
-
-        nav a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 14px;
-            position: relative;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-red);
-            transition: 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            z-index: 1001;
-            padding: 10px;
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 2px;
-            background: #fff;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        .menu-toggle.active span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        .music-player {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 100;
-            pointer-events: all;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 60px;
-            padding: 15px 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .play-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--gradient-red);
-            border: none;
-            cursor: pointer;
-            color: #fff;
-        }
-
-        .volume-control {
-            width: 80px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 2px;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .volume-bar {
-            height: 100%;
-            background: var(--gradient-red);
-            width: 70%;
-        }
-
-        /* Entry Overlay */
-        #entry-overlay {
-            position: fixed;
-            inset: 0;
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: opacity 1s, visibility 1s;
-        }
-
-        .loader-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .loader-percentage {
-            font-size: clamp(60px, 10vw, 120px);
-            font-weight: 900;
-            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.2) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: -5px;
-        }
-
-        .loader-bar-bg {
-            width: 250px;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .loader-bar-fill {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 0%;
-            background: var(--gradient-red);
-            transition: width 0.1s linear;
-            box-shadow: 0 0 15px var(--glow-red);
-        }
-
-        .enter-btn {
-            display: none;
-            opacity: 0;
-            padding: 22px 60px;
-            background: var(--gradient-red);
-            border: none;
-            border-radius: 50px;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-            box-shadow: 0 0 30px var(--glow-red);
-            transform: translateY(20px);
-        }
-
-        .enter-btn.visible {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .enter-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px var(--glow-red);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 150px 60px 100px;
-            pointer-events: all;
-        }
-
-        .contact-container {
-            max-width: 800px;
-            width: 100%;
-        }
-
-        .contact-form {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 50px;
-        }
-
-        .form-group {
-            margin-bottom: 30px;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        .form-input,
-        .form-textarea {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            color: #fff;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--primary-red);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .btn-primary {
-            width: 100%;
-            padding: 20px;
-            border-radius: 50px;
-            border: none;
-            background: var(--gradient-red);
-            color: #fff;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px var(--glow-red);
-        }
-
-        /* Logo Animations */
-        @keyframes floatLogo {
-
-            0%,
-            100% {
-                transform: translateY(0) scale(1);
-            }
-
-            50% {
-                transform: translateY(-15px) scale(1.02);
-            }
-        }
-
-        .loader-logo {
-            width: 180px;
-            height: auto;
-            margin-bottom: 30px;
-            filter: drop-shadow(0 0 20px var(--glow-red));
-            animation: floatLogo 4s ease-in-out infinite;
-        }
-
-        .footer-logo {
-            height: 30px;
-            width: auto;
-            margin-bottom: 20px;
-            filter: grayscale(1) opacity(0.5);
-            transition: all 0.3s;
-        }
-
-        .footer-logo:hover {
-            filter: grayscale(0) opacity(1);
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 30px;
-            }
-
-            .logo img {
-                height: 30px;
-            }
-
-            .logo-text {
-                font-size: 16px;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background: rgba(0, 0, 0, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 40px;
-                transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-                z-index: 1000;
-                pointer-events: all;
-            }
-
-            nav.active {
-                right: 0;
-            }
-
-            nav a {
-                font-size: 24px;
-                font-weight: 700;
-            }
-
-            .contact-section {
-                padding: 100px 20px 60px;
-            }
-
-            .contact-container {
-                padding: 30px 20px;
-            }
-
-            .section-header h2 {
-                font-size: 32px;
-            }
-
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .music-player {
-                bottom: 20px;
-                left: 20px;
-                right: 20px;
-                padding: 10px 15px;
-                width: auto;
-                justify-content: space-between;
-                gap: 10px;
-            }
-
-            .music-info {
-                display: none;
-            }
-
-            .volume-control {
-                width: 60px;
-            }
-
-            footer {
-                padding: 40px 20px;
-            }
-        }
-    </style>
+    <title>Contact | Elisha Straton</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="custom-cursor"></div>
-    <div class="cursor-follower"></div>
-    <div id="canvas-container"></div>
+    <canvas id="bg-canvas"></canvas>
+    <div class="overlay-gradient"></div>
 
-    <audio id="bgMusic" src="music.wav" loop autoplay muted></audio>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Elisha Straton Logo">
+            <span>STRATON</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+    </header>
 
-    <div id="entry-overlay">
-        <div class="loader-container">
-            <img src="logo.png" alt="Logo" class="loader-logo">
-            <div class="loader-percentage" id="loaderPercentage">00</div>
-            <div class="loader-bar-bg">
-                <div class="loader-bar-fill" id="loaderBarFill"></div>
-            </div>
-        </div>
-        <button class="enter-btn" id="enterBtn">RESUME EXPERIENCE</button>
-    </div>
+    <div class="main-wrapper">
+        <section style="padding-top: 150px; min-height: 100vh;">
+            <div class="container">
+                <h1 class="section-title">Get in <span>Touch</span></h1>
 
-    <div class="music-player">
-        <button class="play-btn" id="playBtn">▶</button>
-        <div class="music-info" style="display: flex; flex-direction: column;">
-            <span style="font-size: 12px; font-weight: 600;">Portfolio Theme</span>
-            <span style="font-size: 10px; color: rgba(255,255,255,0.5);">Background Music</span>
-        </div>
-        <div class="volume-control" id="volumeControl">
-            <div class="volume-bar" id="volumeBar"></div>
-        </div>
-    </div>
+                <div class="contact-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start;">
 
-    <div class="content">
-        <header>
-            <a href="index.html" class="logo">
-                <img src="logo.png" alt="Logo">
-                <span class="logo-text">ESK</span>
-            </a>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="work.html">Work</a>
-                <a href="cv.html">CV</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
+                    <!-- Contact Info -->
+                    <div>
+                        <h2 style="font-size: 2rem; margin-bottom: 20px;">Let's Build Something Awesome</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 40px; font-size: 1.1rem;">
+                            Have a project in mind? Want to collaborate or just say hello?
+                            Drop me a message and I'll get back to you as soon as possible.
+                        </p>
 
-        <section class="contact-section">
-            <div class="contact-container">
-                <div style="text-align: center; margin-bottom: 60px;">
-                    <h2 style="font-size: 60px; font-weight: 900; margin-bottom: 20px;">Contact Me</h2>
-                    <p style="color: rgba(255,255,255,0.6); font-size: 18px;">Let's build something amazing together</p>
+                        <div style="margin-bottom: 30px;">
+                            <h4 style="color: var(--color-cyan);">Email</h4>
+                            <p>contact@elishastraton.com</p>
+                        </div>
+
+                        <div style="margin-bottom: 30px;">
+                            <h4 style="color: var(--color-cyan);">Location</h4>
+                            <p>Global / Remote</p>
+                        </div>
+
+                        <div style="display: flex; gap: 20px; margin-top: 40px;">
+                            <a href="#" class="social-link">Github</a>
+                            <a href="#" class="social-link">LinkedIn</a>
+                            <a href="#" class="social-link">Twitter</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form
+                        style="background: rgba(255,255,255,0.03); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                        <div style="margin-bottom: 20px;">
+                            <label
+                                style="display: block; margin-bottom: 10px; color: var(--color-cyan); font-weight: 600;">Name</label>
+                            <input type="text"
+                                style="width: 100%; padding: 15px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-family: inherit;">
+                        </div>
+
+                        <div style="margin-bottom: 20px;">
+                            <label
+                                style="display: block; margin-bottom: 10px; color: var(--color-cyan); font-weight: 600;">Email</label>
+                            <input type="email"
+                                style="width: 100%; padding: 15px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-family: inherit;">
+                        </div>
+
+                        <div style="margin-bottom: 30px;">
+                            <label
+                                style="display: block; margin-bottom: 10px; color: var(--color-cyan); font-weight: 600;">Message</label>
+                            <textarea rows="5"
+                                style="width: 100%; padding: 15px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-family: inherit; resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label class="form-label">Name</label>
-                        <input type="text" class="form-input" placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-input" placeholder="your@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Message</label>
-                        <textarea class="form-textarea" placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">Send Message</button>
-                </form>
             </div>
         </section>
 
         <footer>
-            <img src="logo.png" alt="Logo" class="footer-logo">
-            <p>&copy; 2025 Elisha Straton Kimario. All rights reserved.</p>
+            <div class="container">
+                <p style="color: var(--text-secondary);">&copy; 2026 Elisha Straton.</p>
+            </div>
         </footer>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        const cursor = document.querySelector('.custom-cursor');
-        const follower = document.querySelector('.cursor-follower');
-        let mouseX = 0, mouseY = 0;
-        let followerX = 0, followerY = 0;
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX; mouseY = e.clientY;
-            cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
-        });
-        function animateFollower() {
-            followerX += (mouseX - followerX) * 0.1; followerY += (mouseY - followerY) * 0.1;
-            follower.style.left = (followerX - 20) + 'px'; follower.style.top = (followerY - 20) + 'px';
-            requestAnimationFrame(animateFollower);
-        }
-        animateFollower();
-
-        const container = document.getElementById('canvas-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        container.appendChild(renderer.domElement);
-        camera.position.z = 5;
-
-        const geo = new THREE.BufferGeometry();
-        const count = 1000;
-        const pos = new Float32Array(count * 3);
-        for (let i = 0; i < count * 3; i++) pos[i] = (Math.random() - 0.5) * 20;
-        geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-        const mat = new THREE.PointsMaterial({ size: 0.02, color: 0xE31E24, transparent: true, opacity: 0.8 });
-        const mesh = new THREE.Points(geo, mat);
-        scene.add(mesh);
-
-        function animate() {
-            requestAnimationFrame(animate);
-            mesh.rotation.y += 0.001;
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        // Music & Loader Logic
-        const bgMusic = document.getElementById('bgMusic');
-        const entryOverlay = document.getElementById('entry-overlay');
-        const enterBtn = document.getElementById('enterBtn');
-        const content = document.querySelector('.content');
-        const playBtn = document.getElementById('playBtn');
-        const loaderPercentage = document.getElementById('loaderPercentage');
-        const loaderBarFill = document.getElementById('loaderBarFill');
-        const loaderContainer = document.querySelector('.loader-container');
-
-        let isPlaying = false;
-        let progress = 0;
-
-        function updateLoader() {
-            if (progress < 100) {
-                progress += Math.random() * 2.5;
-                if (progress > 100) progress = 100;
-                loaderPercentage.textContent = Math.floor(progress).toString().padStart(2, '0');
-                loaderBarFill.style.width = progress + '%';
-                requestAnimationFrame(updateLoader);
-            } else {
-                setTimeout(() => {
-                    loaderContainer.style.opacity = '0';
-                    setTimeout(() => {
-                        loaderContainer.style.display = 'none';
-                        enterBtn.classList.add('visible');
-                    }, 500);
-                }, 500);
-            }
-        }
-
-        if (sessionStorage.getItem('experienceStarted') !== 'true') {
-            updateLoader();
-        }
-
-        function startExperience() {
-            entryOverlay.style.opacity = '0';
-            setTimeout(() => {
-                entryOverlay.style.display = 'none';
-                content.classList.add('visible');
-                sessionStorage.setItem('experienceStarted', 'true');
-                bgMusic.muted = false;
-                bgMusic.play().then(() => { isPlaying = true; playBtn.textContent = '⏸'; });
-            }, 500);
-        }
-
-        enterBtn.addEventListener('click', startExperience);
-        if (sessionStorage.getItem('experienceStarted') === 'true') {
-            entryOverlay.style.display = 'none'; content.classList.add('visible');
-            bgMusic.muted = false; bgMusic.play().then(() => { isPlaying = true; playBtn.textContent = '⏸'; })
-                .catch(() => { entryOverlay.style.display = 'flex'; content.classList.remove('visible'); updateLoader(); });
-        }
-
-        playBtn.addEventListener('click', () => {
-            if (isPlaying) { bgMusic.pause(); playBtn.textContent = '▶'; }
-            else { bgMusic.play(); playBtn.textContent = '⏸'; }
-            isPlaying = !isPlaying;
-        });
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const nav = document.querySelector('nav');
-
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-        });
-
-        // Close menu on link click
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                menuToggle.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

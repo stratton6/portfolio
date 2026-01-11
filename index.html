@@ -4,1475 +4,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Elisha Straton Kimario - Award-winning web developer & creative technologist. Expert in full-stack development, 3D animations, and modern web design. Hire the best web developer for your next project.">
-    <meta name="keywords" content="Elisha, Elisha Straton, Kimario, Elisha Straton Kimario, Kimario Elisha Straton, web developer, best web developers, web development, 3D portfolio, full-stack developer, creative coding, responsive design, UI/UX developer">
-    <meta name="author" content="Elisha Straton Kimario">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://elishastraton.com/">
-    <meta property="og:title" content="Elisha Straton Kimario - Best Web Developer Portfolio">
-    <meta property="og:description" content="Elisha Straton Kimario - Award-winning web developer specializing in full-stack development, 3D animations, and creative web solutions.">
-    <meta property="og:image" content="https://elishastraton.com/logo.png">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://elishastraton.com/">
-    <meta property="twitter:title" content="Elisha Straton Kimario - Best Web Developer">
-    <meta property="twitter:description" content="Award-winning web developer specializing in full-stack development and creative web solutions.">
-    <meta property="twitter:image" content="https://elishastraton.com/logo.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://elishastraton.org/">
-    
-    <!-- Language -->
-    <meta http-equiv="content-language" content="en-US">
-    
-    <!-- Mobile -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#E31E24">
-    
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Elisha Straton Kimario",
-      "url": "https://elishastraton.com",
-      "image": "https://elishastraton.com/logo.png",
-      "jobTitle": "Full-Stack Web Developer",
-      "description": "Award-winning web developer specializing in full-stack development, 3D animations, and creative web solutions",
-      "sameAs": [
-        "https://twitter.com/elishastraton",
-        "https://linkedin.com/in/elishastraton",
-        "https://github.com/elishastraton"
-      ],
-      "email": "contact@elishastraton.com",
-      "telephone": "+1-XXX-XXX-XXXX",
-      "knowsAbout": [
-        "Web Development",
-        "Full-Stack Development",
-        "3D Animation",
-        "Creative Coding",
-        "UI/UX Design",
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Web Design",
-        "Responsive Design"
-      ]
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Elisha Straton Kimario Portfolio",
-      "url": "https://elishastraton.com",
-      "description": "Professional portfolio of Elisha Straton Kimario, award-winning web developer",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://elishastraton.com/search?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://elishastraton.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "About",
-          "item": "https://elishastraton.com/about"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Work",
-          "item": "https://elishastraton.com/work"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Contact",
-          "item": "https://elishastraton.com/contact"
-        }
-      ]
-    }
-    </script>
-    
-    <title>Elisha Straton Kimario | Award-Winning Web Developer | Best Web Development Portfolio</title>
-    <style>
-        :root {
-            --primary-red: #E31E24;
-            --accent-red: #FF4D4D;
-            --dark-red: #8B0000;
-            --gradient-red: linear-gradient(135deg, #E31E24 0%, #8B0000 100%);
-            --glow-red: rgba(227, 30, 36, 0.4);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-            cursor: none;
-        }
-
-        #canvas-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: 1;
-        }
-
-        .content {
-            position: relative;
-            z-index: 10;
-            pointer-events: auto;
-        }
-
-        .custom-cursor {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: #fff;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            mix-blend-mode: difference;
-            transition: transform 0.2s ease;
-        }
-
-        .cursor-follower {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.15s ease-out;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 30px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 45px;
-            width: auto;
-            filter: drop-shadow(0 0 20px var(--glow-red));
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            animation: logoFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes logoFloat {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-8px) rotate(5deg);
-            }
-        }
-
-        .logo:hover img {
-            transform: scale(1.15) rotate(10deg);
-            filter: drop-shadow(0 0 30px var(--glow-red));
-        }
-
-        .logo-text {
-            font-size: 20px;
-            font-weight: 800;
-            background: var(--gradient-red);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 1px;
-            animation: textPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes textPulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.7;
-            }
-        }
-
-        nav {
-            display: flex;
-            gap: 40px;
-            pointer-events: all;
-        }
-
-        nav a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            position: relative;
-            padding: 8px 0;
-        }
-
-        nav a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-red);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            transform: translateX(-50%);
-        }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-        nav a:hover::before {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            z-index: 1001;
-            padding: 10px;
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background: #fff;
-            transition: 0.3s;
-            border-radius: 3px;
-        }
-
-        .menu-toggle.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-        }
-
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-        }
-
-        .music-player {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 100;
-            pointer-events: all;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 60px;
-            padding: 15px 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-        }
-
-        .music-player:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(227, 30, 36, 0.3);
-        }
-
-        .play-btn {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: var(--gradient-red);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s;
-            color: #fff;
-            font-size: 16px;
-            box-shadow: 0 4px 15px var(--glow-red);
-        }
-
-        .play-btn:hover {
-            transform: scale(1.15) rotate(90deg);
-        }
-
-        .music-info {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .music-title {
-            font-size: 13px;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .music-artist {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .volume-control {
-            width: 80px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 2px;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .volume-bar {
-            height: 100%;
-            background: var(--gradient-red);
-            border-radius: 2px;
-            width: 70%;
-            transition: width 0.2s;
-            box-shadow: 0 0 10px var(--glow-red);
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 60px 60px;
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            gap: 100px;
-        }
-
-        .hero-text {
-            flex: 1;
-            max-width: 700px;
-        }
-
-        .hero-image-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-            width: 420px;
-            height: 420px;
-            border-radius: 40px;
-            overflow: hidden;
-            box-shadow: 0 30px 80px var(--glow-red);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            animation: imageFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes imageFloat {
-
-            0%,
-            100% {
-                transform: translateY(0) rotateY(0deg);
-                box-shadow: 0 30px 80px var(--glow-red);
-            }
-
-            50% {
-                transform: translateY(-20px) rotateY(5deg);
-                box-shadow: 0 40px 100px var(--glow-red);
-            }
-        }
-
-        .hero-image-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: var(--gradient-red);
-            border-radius: 40px;
-            z-index: -1;
-            opacity: 0.5;
-            filter: blur(20px);
-            animation: glowPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes glowPulse {
-
-            0%,
-            100% {
-                opacity: 0.5;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.8;
-                transform: scale(1.05);
-            }
-        }
-
-        .hero-image-wrapper::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, transparent 0%, rgba(227, 30, 36, 0.2) 50%, transparent 100%);
-            pointer-events: none;
-            animation: shimmerSweep 3s ease-in-out infinite;
-        }
-
-        @keyframes shimmerSweep {
-            0% {
-                transform: translateX(-100%) translateY(-100%);
-            }
-
-            50%,
-            100% {
-                transform: translateX(100%) translateY(100%);
-            }
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-            filter: grayscale(0.2) contrast(1.1);
-        }
-
-        .hero-image-wrapper:hover .hero-image {
-            transform: scale(1.1);
-            filter: grayscale(0) contrast(1.2);
-        }
-
-        .hero-subtitle {
-            font-size: 14px;
-            color: var(--primary-red);
-            letter-spacing: 4px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            font-weight: 700;
-            animation: fadeSlideUp 1s ease 0.2s both;
-        }
-
-        .hero-title {
-            font-size: clamp(45px, 7vw, 95px);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.4) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeSlideUp 1s ease 0.4s both, titleGlow 3s ease-in-out infinite;
-            letter-spacing: -2px;
-        }
-
-        @keyframes titleGlow {
-
-            0%,
-            100% {
-                filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
-            }
-
-            50% {
-                filter: drop-shadow(0 0 40px rgba(227, 30, 36, 0.5));
-            }
-        }
-
-        .hero-description {
-            font-size: clamp(16px, 1.5vw, 20px);
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 600px;
-            line-height: 1.8;
-            margin-bottom: 50px;
-            animation: fadeSlideUp 1s ease 0.6s both;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            animation: fadeSlideUp 1s ease 0.8s both;
-            pointer-events: all;
-        }
-
-        .btn {
-            padding: 20px 45px;
-            border-radius: 50px;
-            font-size: 15px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            cursor: pointer;
-            border: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .btn-primary {
-            background: var(--gradient-red);
-            color: #fff;
-            box-shadow: 0 15px 35px var(--glow-red);
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 50px var(--glow-red);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.08);
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--primary-red);
-            transform: translateY(-5px) scale(1.05);
-        }
-
-        #entry-overlay {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at center, #1a0000 0%, #000 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: opacity 1.5s, visibility 1.5s;
-        }
-
-        .loader-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .loader-logo {
-            width: 200px;
-            height: auto;
-            margin-bottom: 40px;
-            filter: drop-shadow(0 0 30px var(--glow-red));
-            animation: loaderLogoAnim 3s ease-in-out infinite;
-        }
-
-        @keyframes loaderLogoAnim {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg) scale(1);
-                filter: drop-shadow(0 0 30px var(--glow-red));
-            }
-
-            25% {
-                transform: translateY(-20px) rotate(-5deg) scale(1.05);
-                filter: drop-shadow(0 0 50px var(--glow-red));
-            }
-
-            50% {
-                transform: translateY(0) rotate(0deg) scale(1.1);
-                filter: drop-shadow(0 0 60px var(--glow-red));
-            }
-
-            75% {
-                transform: translateY(-20px) rotate(5deg) scale(1.05);
-                filter: drop-shadow(0 0 50px var(--glow-red));
-            }
-        }
-
-        .loader-percentage {
-            font-size: clamp(80px, 12vw, 140px);
-            font-weight: 900;
-            background: linear-gradient(135deg, #fff 0%, var(--primary-red) 50%, #fff 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: -8px;
-            animation: gradientShift 3s ease infinite;
-            text-shadow: 0 0 80px var(--glow-red);
-        }
-
-        @keyframes gradientShift {
-
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        .loader-bar-bg {
-            width: 300px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.08);
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .loader-bar-fill {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 0%;
-            background: var(--gradient-red);
-            transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 0 20px var(--glow-red), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-        }
-
-        .loader-bar-fill::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            animation: barShimmer 1.5s ease-in-out infinite;
-        }
-
-        @keyframes barShimmer {
-            0% {
-                transform: translateX(-100%);
-            }
-
-            100% {
-                transform: translateX(200%);
-            }
-        }
-
-        .enter-btn {
-            display: none;
-            opacity: 0;
-            padding: 25px 70px;
-            background: var(--gradient-red);
-            border: none;
-            border-radius: 50px;
-            color: #fff;
-            font-size: 18px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            cursor: pointer;
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 0 40px var(--glow-red);
-            transform: translateY(30px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .enter-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s;
-        }
-
-        .enter-btn:hover::before {
-            left: 100%;
-        }
-
-        .enter-btn.visible {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .enter-btn:hover {
-            transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 0 60px var(--glow-red), 0 20px 40px rgba(227, 30, 36, 0.4);
-        }
-
-        .content {
-            opacity: 0;
-            transition: opacity 1.5s;
-        }
-
-        .content.visible {
-            opacity: 1;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            animation: fadeIn 1s ease 1.2s both;
-        }
-
-        .scroll-text {
-            font-size: 11px;
-            letter-spacing: 3px;
-            color: rgba(255, 255, 255, 0.6);
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .scroll-line {
-            width: 2px;
-            height: 50px;
-            background: linear-gradient(180deg, var(--primary-red) 0%, transparent 100%);
-            animation: scrollAnimation 2s ease-in-out infinite;
-        }
-
-        .floating-cards {
-            position: fixed;
-            top: 50%;
-            right: 60px;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            z-index: 50;
-            pointer-events: all;
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 25px;
-            padding: 25px 30px;
-            min-width: 220px;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            animation: cardSlideIn 0.8s ease both;
-        }
-
-        .info-card:nth-child(1) {
-            animation-delay: 1s;
-        }
-
-        .info-card:nth-child(2) {
-            animation-delay: 1.2s;
-        }
-
-        .info-card:nth-child(3) {
-            animation-delay: 1.4s;
-        }
-
-        @keyframes cardSlideIn {
-            from {
-                transform: translateX(100px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .info-card:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(227, 30, 36, 0.5);
-            transform: translateX(-15px) scale(1.05);
-            box-shadow: 0 12px 40px rgba(227, 30, 36, 0.3);
-        }
-
-        .info-card-label {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .info-card-value {
-            font-size: 17px;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        footer {
-            padding: 60px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            pointer-events: all;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(20px);
-        }
-
-        .footer-logo {
-            height: 35px;
-            width: auto;
-            margin-bottom: 20px;
-            filter: grayscale(1) opacity(0.5);
-            transition: all 0.3s;
-        }
-
-        .footer-logo:hover {
-            filter: grayscale(0) opacity(1) drop-shadow(0 0 20px var(--glow-red));
-            transform: scale(1.1);
-        }
-
-        @keyframes fadeSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes scrollAnimation {
-
-            0%,
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translateY(25px);
-                opacity: 0.5;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .floating-cards {
-                right: 30px;
-            }
-
-            .info-card {
-                min-width: 180px;
-                padding: 20px 25px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 60px;
-            }
-
-            .hero-text {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-image-container {
-                order: -1;
-            }
-
-            .hero-image-wrapper {
-                width: 350px;
-                height: 350px;
-            }
-
-            .floating-cards {
-                position: static;
-                flex-direction: row;
-                justify-content: center;
-                transform: none;
-                margin-top: 40px;
-                pointer-events: all;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 30px;
-            }
-
-            .logo img {
-                height: 35px;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background: rgba(0, 0, 0, 0.98);
-                backdrop-filter: blur(30px);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 50px;
-                transition: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-                z-index: 1000;
-            }
-
-            nav.active {
-                right: 0;
-            }
-
-            nav a {
-                font-size: 28px;
-                font-weight: 800;
-            }
-
-            .hero {
-                padding: 140px 30px 60px;
-            }
-
-            .hero-image-wrapper {
-                width: 280px;
-                height: 280px;
-            }
-
-            .music-player {
-                bottom: 20px;
-                left: 20px;
-                right: 20px;
-                padding: 12px 20px;
-            }
-
-            .music-info {
-                display: none;
-            }
-
-            .floating-cards {
-                flex-wrap: wrap;
-                gap: 15px;
-                padding: 0 20px;
-            }
-
-            .info-card {
-                min-width: auto;
-                flex: 1;
-                min-width: 150px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: clamp(32px, 12vw, 50px);
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .loader-percentage {
-                font-size: clamp(60px, 15vw, 100px);
-            }
-
-            .loader-bar-bg {
-                width: 200px;
-            }
-        }
-    </style>
+    <title>Elisha Straton | Creative Technologist & Full Stack Developer</title>
+
+    <!-- Design & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Portfolio of Elisha Straton Kimario - Award-winning web developer, creative technologist, and 3D web specialist.">
+    <meta name="keywords" content="Web Developer, 3D Portfolio, React, Creative Coding, Elisha Straton">
 </head>
 
 <body>
-    <div class="custom-cursor"></div>
-    <div class="cursor-follower"></div>
 
-    <div id="canvas-container"></div>
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="overlay-gradient"></div>
 
-    <audio id="bgMusic" src="music.wav" loop autoplay muted></audio>
-
-    <div id="entry-overlay">
-        <div class="loader-container">
-            <img src="logo.png" alt="Logo" class="loader-logo">
-            <div class="loader-percentage" id="loaderPercentage">00</div>
-            <div class="loader-bar-bg">
-                <div class="loader-bar-fill" id="loaderBarFill"></div>
-            </div>
+    <!-- Navigation -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Elisha Straton Logo">
+            <span>STRATON</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <button class="enter-btn" id="enterBtn">ENTER EXPERIENCE</button>
-    </div>
+    </header>
 
-    <div class="music-player">
-        <button class="play-btn" id="playBtn">▶</button>
-        <div class="music-info">
-            <div class="music-title">Portfolio Theme</div>
-            <div class="music-artist">Background Music</div>
-        </div>
-        <div class="volume-control" id="volumeControl">
-            <div class="volume-bar" id="volumeBar"></div>
-        </div>
-    </div>
+    <div class="main-wrapper">
 
-    <div class="content">
-        <header>
-            <a href="index.html" class="logo">
-                <img src="logo.png" alt="Logo">
-                <span class="logo-text">ESK</span>
-            </a>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="work.html">Work</a>
-                <a href="cv.html">CV</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
-
-        <section class="hero" id="home">
-            <div class="hero-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
                 <div class="hero-text">
-                    <div class="hero-subtitle">Creative Developer & Designer</div>
-                    <h1 class="hero-title">
-                        Elisha Straton<br>
-                        Kimario
+                    <p class="hero-subtitle">Web Developer & Creative Technologist</p>
+                    <h1 class="hero-glitch">
+                        Hello, I am<br>
+                        <span class="typing-text" id="typingText"></span><span class="cursor-blink"></span>
                     </h1>
-                    <p class="hero-description">
-                        Crafting immersive digital experiences through innovative design and cutting-edge development.
-                        Transforming ideas into stunning realities.
+                    <p class="hero-desc">
+                        Award-winning Full-Stack Web Developer specializing in modern web applications, 3D graphics,
+                        and creative coding. I transform ideas into powerful digital experiences.
                     </p>
                     <div class="cta-buttons">
-                        <a href="work.html" class="btn btn-primary">View My Work</a>
-                        <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                        <a href="work.html" class="btn btn-primary">View Work</a>
+                        <a href="contact.html" class="btn btn-glow">Hire Me</a>
                     </div>
                 </div>
-                <div class="hero-image-container">
-                    <div class="hero-image-wrapper">
-                        <img src="elisha x-mass.png" alt="Elisha Straton Kimario" class="hero-image">
+                <div class="hero-img-container">
+                    <!-- User Image -->
+                    <img src="elisha%20straton.jpg" alt="Elisha Straton Kimario" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- What I Do Preview -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">My <span>Expertise</span></h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon">💻</div>
+                        <h3>Web Development</h3>
+                        <p>Full-stack engineered solutions using React, Node.js, and modern frameworks.
+                            Performance-obsessed and scalable.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🧊</div>
+                        <h3>3D Experiences</h3>
+                        <p>Interactive 3D content for the web using Three.js and WebGL. Making the browser come alive.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🎨</div>
+                        <h3>Creative Design</h3>
+                        <p>UI/UX design that focuses on fluid interactions, glassmorphism, and futuristic aesthetics.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="services.html" class="btn btn-primary">View All Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Work Preview -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">Selected <span>Work</span></h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>School Management System</h3>
+                        <p>A comprehensive Django-based platform for school administration.</p>
+                        <a href="work.html"
+                            style="color: var(--color-cyan); margin-top: 10px; display: inline-block;">View Project
+                            →</a>
+                    </div>
+                    <div class="card">
+                        <h3>AI Research Portfolio</h3>
+                        <p>Showcasing advanced machine learning models and visualizations.</p>
+                        <a href="work.html"
+                            style="color: var(--color-cyan); margin-top: 10px; display: inline-block;">View Project
+                            →</a>
+                    </div>
+                    <div class="card">
+                        <h3>E-Commerce Platform</h3>
+                        <p>High-conversion online store with seamless payment integration.</p>
+                        <a href="work.html"
+                            style="color: var(--color-cyan); margin-top: 10px; display: inline-block;">View Project
+                            →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="scroll-indicator">
-            <span class="scroll-text">Scroll Down</span>
-            <div class="scroll-line"></div>
-        </div>
-
-        <footer role="contentinfo" itemscope itemtype="https://schema.org/Organization">
-            <img src="logo.png" alt="Elisha Straton Kimario Logo" class="footer-logo" itemprop="image">
-            <p>&copy; 2025 <span itemprop="name">Elisha Straton Kimario</span>. All rights reserved.</p>
-            <meta itemprop="url" content="https://elishastraton.com">
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-socials">
+                    <a href="#" class="social-link">GH</a>
+                    <a href="#" class="social-link">LN</a>
+                    <a href="#" class="social-link">TW</a>
+                    <a href="#" class="social-link">IG</a>
+                </div>
+                <p style="color: var(--text-secondary);">&copy; 2026 Elisha Straton. Crafted with <span
+                        style="color: var(--color-purple);">♥</span> and Code.</p>
+            </div>
         </footer>
 
-        <div class="floating-cards">
-            <div class="info-card">
-                <div class="info-card-label">Location</div>
-                <div class="info-card-value">Arusha, TZ</div>
-            </div>
-            <div class="info-card">
-                <div class="info-card-label">Available For</div>
-                <div class="info-card-value">Freelance</div>
-            </div>
-            <div class="info-card">
-                <div class="info-card-label">Experience</div>
-                <div class="info-card-value">5+ Years</div>
-            </div>
-        </div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        const cursor = document.querySelector('.custom-cursor');
-        const follower = document.querySelector('.cursor-follower');
-        let mouseX = 0, mouseY = 0;
-        let followerX = 0, followerY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursor.style.left = mouseX + 'px';
-            cursor.style.top = mouseY + 'px';
-        });
-
-        function animateFollower() {
-            followerX += (mouseX - followerX) * 0.1;
-            followerY += (mouseY - followerY) * 0.1;
-            follower.style.left = (followerX - 20) + 'px';
-            follower.style.top = (followerY - 20) + 'px';
-            requestAnimationFrame(animateFollower);
-        }
-        animateFollower();
-
-        const interactiveElements = document.querySelectorAll('a, button, .btn, .info-card');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(2.5)';
-                follower.style.transform = 'scale(1.8)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                follower.style.transform = 'scale(1)';
-            });
-        });
-
-        const container = document.getElementById('canvas-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        container.appendChild(renderer.domElement);
-
-        camera.position.z = 5;
-
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 3000;
-        const posArray = new Float32Array(particlesCount * 3);
-
-        for (let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 25;
-        }
-
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.025,
-            color: 0xE31E24,
-            transparent: true,
-            opacity: 0.9,
-            blending: THREE.AdditiveBlending
-        });
-
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
-
-        const torusGeometry = new THREE.TorusGeometry(2, 0.5, 20, 100);
-        const torusMaterial = new THREE.MeshStandardMaterial({
-            color: 0xE31E24,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.4,
-            emissive: 0x8B0000,
-            emissiveIntensity: 0.5
-        });
-        const torus = new THREE.Mesh(torusGeometry, torusMaterial);
-        torus.position.set(-4, 2, -2);
-        scene.add(torus);
-
-        const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
-        const sphereMaterial = new THREE.MeshStandardMaterial({
-            color: 0xFF4D4D,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.4,
-            emissive: 0xE31E24,
-            emissiveIntensity: 0.5
-        });
-        const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-        sphere.position.set(4, -2, -2);
-        scene.add(sphere);
-
-        const boxGeometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
-        const boxMaterial = new THREE.MeshStandardMaterial({
-            color: 0x8B0000,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.3,
-            emissive: 0xE31E24,
-            emissiveIntensity: 0.4
-        });
-        const box = new THREE.Mesh(boxGeometry, boxMaterial);
-        box.position.set(0, 3, -3);
-        scene.add(box);
-
-        const pointLight1 = new THREE.PointLight(0xE31E24, 3, 50);
-        pointLight1.position.set(5, 5, 5);
-        scene.add(pointLight1);
-
-        const pointLight2 = new THREE.PointLight(0xFF4D4D, 2, 30);
-        pointLight2.position.set(-5, -5, 3);
-        scene.add(pointLight2);
-
-        const ambientLight = new THREE.AmbientLight(0x8B0000, 0.6);
-        scene.add(ambientLight);
-
-        let mouseXPos = 0;
-        let mouseYPos = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseXPos = (e.clientX / window.innerWidth) * 2 - 1;
-            mouseYPos = -(e.clientY / window.innerHeight) * 2 + 1;
-        });
-
-        let time = 0;
-        function animate() {
-            requestAnimationFrame(animate);
-            time += 0.001;
-
-            torus.rotation.x += 0.008;
-            torus.rotation.y += 0.005;
-            torus.position.y = 2 + Math.sin(time * 2) * 0.3;
-
-            sphere.rotation.x += 0.005;
-            sphere.rotation.y += 0.008;
-            sphere.position.x = 4 + Math.cos(time * 1.5) * 0.5;
-
-            box.rotation.x += 0.006;
-            box.rotation.y += 0.006;
-            box.rotation.z += 0.003;
-
-            particlesMesh.rotation.y = time * 0.3;
-            particlesMesh.rotation.x = Math.sin(time) * 0.3;
-
-            pointLight1.position.x = 5 + Math.sin(time * 2) * 2;
-            pointLight1.position.y = 5 + Math.cos(time * 2) * 2;
-
-            camera.position.x += (mouseXPos * 0.8 - camera.position.x) * 0.05;
-            camera.position.y += (mouseYPos * 0.8 - camera.position.y) * 0.05;
-            camera.lookAt(scene.position);
-
-            renderer.render(scene, camera);
-        }
-
-        animate();
-
-        const playBtn = document.getElementById('playBtn');
-        const volumeControl = document.getElementById('volumeControl');
-        const volumeBar = document.getElementById('volumeBar');
-        const bgMusic = document.getElementById('bgMusic');
-        const entryOverlay = document.getElementById('entry-overlay');
-        const enterBtn = document.getElementById('enterBtn');
-        const content = document.querySelector('.content');
-        const loaderPercentage = document.getElementById('loaderPercentage');
-        const loaderBarFill = document.getElementById('loaderBarFill');
-        const loaderContainer = document.querySelector('.loader-container');
-
-        let isPlaying = false;
-        let progress = 0;
-
-        function updateLoader() {
-            if (progress < 100) {
-                progress += Math.random() * 1.8 + 0.5;
-                if (progress > 100) progress = 100;
-                loaderPercentage.textContent = Math.floor(progress).toString().padStart(2, '0');
-                loaderBarFill.style.width = progress + '%';
-                requestAnimationFrame(updateLoader);
-            } else {
-                setTimeout(() => {
-                    loaderContainer.style.opacity = '0';
-                    setTimeout(() => {
-                        loaderContainer.style.display = 'none';
-                        enterBtn.classList.add('visible');
-                    }, 500);
-                }, 500);
-            }
-        }
-
-        if (sessionStorage.getItem('experienceStarted') !== 'true') {
-            updateLoader();
-        }
-
-        enterBtn.addEventListener('click', () => {
-            entryOverlay.style.opacity = '0';
-            setTimeout(() => {
-                entryOverlay.style.display = 'none';
-                content.classList.add('visible');
-                sessionStorage.setItem('experienceStarted', 'true');
-                bgMusic.muted = false;
-                bgMusic.play().then(() => {
-                    isPlaying = true;
-                    playBtn.textContent = '⏸';
-                }).catch(e => console.log("Autoplay failed:", e));
-            }, 1500);
-        });
-
-        if (sessionStorage.getItem('experienceStarted') === 'true') {
-            entryOverlay.style.display = 'none';
-            content.classList.add('visible');
-            bgMusic.muted = false;
-            bgMusic.play().then(() => {
-                isPlaying = true;
-                playBtn.textContent = '⏸';
-            }).catch(e => {
-                console.log("Autoplay blocked");
-                entryOverlay.style.display = 'flex';
-                content.classList.remove('visible');
-                updateLoader();
-            });
-        }
-
-        bgMusic.volume = 0.7;
-
-        playBtn.addEventListener('click', () => {
-            if (isPlaying) {
-                bgMusic.pause();
-                playBtn.textContent = '▶';
-            } else {
-                bgMusic.play().catch(e => console.log("Audio play failed"));
-                playBtn.textContent = '⏸';
-            }
-            isPlaying = !isPlaying;
-        });
-
-        volumeControl.addEventListener('click', (e) => {
-            const rect = volumeControl.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
-            volumeBar.style.width = percentage + '%';
-            bgMusic.volume = percentage / 100;
-        });
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        const menuToggle = document.getElementById('menuToggle');
-        const nav = document.querySelector('nav');
-
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-        });
-
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                menuToggle.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

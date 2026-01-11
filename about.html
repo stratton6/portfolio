@@ -4,727 +4,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Elisha Straton Kimario - Full-stack web developer with expertise in modern technologies. Learn about my journey, skills, and passion for creating innovative web solutions.">
-    <meta name="keywords" content="about Elisha, Elisha Straton Kimario, web developer portfolio, full-stack developer, web development skills, developer experience">
-    <meta name="author" content="Elisha Straton Kimario">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://elishastraton.com/about">
-    <meta property="og:title" content="About Elisha Straton Kimario - Web Developer">
-    <meta property="og:description" content="Learn about Elisha Straton Kimario's expertise, experience, and passion for web development and creative technology.">
-    <meta property="og:image" content="https://elishastraton.com/logo.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://elishastraton.org/about">
-    
-    <title>About Elisha Straton Kimario | Full-Stack Web Developer | Experience & Skills</title>
-    <style>
-        :root {
-            --primary-red: #E31E24;
-            --accent-red: #FF4D4D;
-            --dark-red: #8B0000;
-            --gradient-red: linear-gradient(135deg, #E31E24 0%, #8B0000 100%);
-            --glow-red: rgba(227, 30, 36, 0.4);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-            cursor: none;
-        }
-
-        #canvas-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: 1;
-        }
-
-        .content {
-            position: relative;
-            z-index: 10;
-            opacity: 0;
-            transition: opacity 1s;
-        }
-
-        .content.visible {
-            opacity: 1;
-        }
-
-        .custom-cursor {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: #fff;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            mix-blend-mode: difference;
-            transition: transform 0.2s ease;
-        }
-
-        .cursor-follower {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.15s ease-out;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 40px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-            filter: drop-shadow(0 0 10px var(--glow-red));
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover img {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .logo-text {
-            font-size: 18px;
-            font-weight: 700;
-            background: var(--gradient-red);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        nav {
-            display: flex;
-            gap: 40px;
-            pointer-events: all;
-        }
-
-        nav a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 14px;
-            position: relative;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-red);
-            transition: 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            z-index: 1001;
-            padding: 10px;
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 2px;
-            background: #fff;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        .menu-toggle.active span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        /* Music Player */
-        .music-player {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 100;
-            pointer-events: all;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 60px;
-            padding: 15px 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .play-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--gradient-red);
-            border: none;
-            cursor: pointer;
-            color: #fff;
-        }
-
-        .volume-control {
-            width: 80px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 2px;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .volume-bar {
-            height: 100%;
-            background: var(--gradient-red);
-            width: 70%;
-        }
-
-        /* Entry Overlay */
-        #entry-overlay {
-            position: fixed;
-            inset: 0;
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: opacity 1s, visibility 1s;
-        }
-
-        .loader-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .loader-percentage {
-            font-size: clamp(60px, 10vw, 120px);
-            font-weight: 900;
-            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.2) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: -5px;
-        }
-
-        .loader-bar-bg {
-            width: 250px;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .loader-bar-fill {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 0%;
-            background: var(--gradient-red);
-            transition: width 0.1s linear;
-            box-shadow: 0 0 15px var(--glow-red);
-        }
-
-        .enter-btn {
-            display: none;
-            opacity: 0;
-            padding: 22px 60px;
-            background: var(--gradient-red);
-            border: none;
-            border-radius: 50px;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-            box-shadow: 0 0 30px var(--glow-red);
-            transform: translateY(20px);
-        }
-
-        .enter-btn.visible {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .enter-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px var(--glow-red);
-        }
-
-        /* Logo Animations */
-        @keyframes floatLogo {
-
-            0%,
-            100% {
-                transform: translateY(0) scale(1);
-            }
-
-            50% {
-                transform: translateY(-15px) scale(1.02);
-            }
-        }
-
-        .loader-logo {
-            width: 180px;
-            height: auto;
-            margin-bottom: 30px;
-            filter: drop-shadow(0 0 20px var(--glow-red));
-            animation: floatLogo 4s ease-in-out infinite;
-        }
-
-        /* About Section */
-        .profile-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 120px 60px;
-            pointer-events: all;
-        }
-
-        .profile-container {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 80px;
-            max-width: 1400px;
-        }
-
-        .profile-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .profile-image-placeholder {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: var(--gradient-red);
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 20px 60px var(--glow-red);
-            overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .profile-image-placeholder img {
-            width: 70%;
-            height: auto;
-            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
-        }
-
-        .social-link {
-            display: inline-flex;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            align-items: center;
-            justify-content: center;
-            margin: 5px;
-            color: #fff;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-        }
-
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 30px;
-            }
-
-            .logo img {
-                height: 30px;
-            }
-
-            .logo-text {
-                font-size: 16px;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background: rgba(0, 0, 0, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 40px;
-                transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-                z-index: 1000;
-                pointer-events: all;
-            }
-
-            nav.active {
-                right: 0;
-            }
-
-            nav a {
-                font-size: 24px;
-                font-weight: 700;
-            }
-
-            .profile-section {
-                padding: 100px 20px 60px;
-            }
-
-            .profile-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .profile-card {
-                padding: 30px 20px;
-            }
-
-            .profile-image-placeholder {
-                width: 180px;
-                height: 180px;
-            }
-
-            .profile-image-placeholder img {
-                width: 60%;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .music-player {
-                bottom: 20px;
-                left: 20px;
-                right: 20px;
-                padding: 10px 15px;
-                width: auto;
-                justify-content: space-between;
-                gap: 10px;
-            }
-
-            .music-info {
-                display: none;
-            }
-
-            .volume-control {
-                width: 60px;
-            }
-
-            footer {
-                padding: 40px 20px;
-            }
-        }
-    </style>
+    <title>About | Elisha Straton</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="custom-cursor"></div>
-    <div class="cursor-follower"></div>
-    <div id="canvas-container"></div>
+    <canvas id="bg-canvas"></canvas>
+    <div class="overlay-gradient"></div>
 
-    <audio id="bgMusic" src="music.wav" loop autoplay muted></audio>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Elisha Straton Logo">
+            <span>STRATON</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+    </header>
 
-    <div id="entry-overlay">
-        <div class="loader-container">
-            <img src="logo.png" alt="Logo" class="loader-logo">
-            <div class="loader-percentage" id="loaderPercentage">00</div>
-            <div class="loader-bar-bg">
-                <div class="loader-bar-fill" id="loaderBarFill"></div>
-            </div>
-        </div>
-        <button class="enter-btn" id="enterBtn">RESUME EXPERIENCE</button>
-    </div>
-
-    <div class="music-player">
-        <button class="play-btn" id="playBtn">▶</button>
-        <div class="music-info" style="display: flex; flex-direction: column;">
-            <span style="font-size: 12px; font-weight: 600;">Portfolio Theme</span>
-            <span style="font-size: 10px; color: rgba(255,255,255,0.5);">Background Music</span>
-        </div>
-        <div class="volume-control" id="volumeControl">
-            <div class="volume-bar" id="volumeBar"></div>
-        </div>
-    </div>
-
-    <div class="content">
-        <header>
-            <a href="index.html" class="logo">
-                <img src="logo.png" alt="Logo">
-                <span class="logo-text">ESK</span>
-            </a>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="work.html">Work</a>
-                <a href="cv.html">CV</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
-
-        <section class="profile-section">
-            <div class="profile-container">
-                <div class="profile-card">
-                    <div class="profile-image-placeholder">
-                        <img src="logo.png" alt="Logo">
-                    </div>
-                    <h2>Elisha Straton Kimario</h2>
-                    <p style="color: rgba(255,255,255,0.6); margin: 15px 0 30px;">AI Engineer & Robotics Specialist</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">GH</a>
+    <div class="main-wrapper">
+        <section style="padding-top: 150px;">
+            <div class="container about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+                <!-- Bio Text -->
+                <div>
+                    <h1 class="section-title" style="transform: none; left: 0; text-align: left;">Who <span>I Am</span>
+                    </h1>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 20px;">
+                        I am Elisha Straton Kimario, a visionary Web Developer and Creative Technologist.
+                        My journey began with a curiosity for how things work, which quickly evolved into a passion for
+                        building digital worlds.
+                    </p>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 20px;">
+                        I specialize in the intersection of design, code, and 3D graphics. I don't just build websites;
+                        I create immersive experiences that leave a lasting impression. From high-performance web apps
+                        to interactive 3D portfolios,
+                        my work is defined by precision, aesthetics, and innovation.
+                    </p>
+                    <div style="margin-top: 40px;">
+                        <a href="contact.html" class="btn btn-primary">Download CV</a>
                     </div>
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 40px;">
-                    <div>
-                        <h3
-                            style="text-transform: uppercase; font-size: 14px; letter-spacing: 2px; margin-bottom: 15px; color: rgba(255,255,255,0.5);">
-                            About Me</h3>
-                        <p style="font-size: 18px; line-height: 1.8;">
-                            I'm an AI Engineer and Data Scientist specializing in Robotics and Cybersecurity.
-                            I build intelligent systems that bridge the gap between the digital and physical worlds.
-                        </p>
-                    </div>
-                    <div>
-                        <h3
-                            style="text-transform: uppercase; font-size: 14px; letter-spacing: 2px; margin-bottom: 15px; color: rgba(255,255,255,0.5);">
-                            Core Skills</h3>
-                        <div class="skills-grid">
-                            <div class="skill-tag">Python</div>
-                            <div class="skill-tag">PyTorch</div>
-                            <div class="skill-tag">ROS2</div>
-                            <div class="skill-tag">C++</div>
-                            <div class="skill-tag">Cybersecurity</div>
-                            <div class="skill-tag">Three.js</div>
-                        </div>
+
+                <!-- 3D/Visual Element -->
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div style="
+                        width: 100%; height: 400px; 
+                        background: radial-gradient(circle, rgba(188,19,254,0.1), transparent 70%);
+                        border-radius: 30px; 
+                        border: 1px solid rgba(255,255,255,0.05);
+                        display: flex; flex-wrap: wrap; gap: 10px; padding: 20px;
+                        justify-content: center; align-content: center;
+                    ">
+                        <!-- Tech Stack Bubbles -->
+                        <span class="tech-bubble">React</span>
+                        <span class="tech-bubble">Python</span>
+                        <span class="tech-bubble">Three.js</span>
+                        <span class="tech-bubble">Django</span>
+                        <span class="tech-bubble">WebGL</span>
+                        <span class="tech-bubble">Node.js</span>
+                        <span class="tech-bubble">GSAP</span>
+                        <span class="tech-bubble">Blender</span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Timeline / Experience -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">My <span>Journey</span></h2>
+                <div
+                    style="max-width: 800px; margin: 0 auto; border-left: 2px solid var(--color-cyan); padding-left: 30px;">
+
+                    <div style="margin-bottom: 50px; position: relative;">
+                        <div
+                            style="position: absolute; left: -41px; top: 0; width: 20px; height: 20px; background: var(--bg-dark); border: 2px solid var(--color-cyan); border-radius: 50%;">
+                        </div>
+                        <h3 style="color: #fff">Senior Full Stack Developer</h3>
+                        <span style="color: var(--color-purple); font-size: 0.9rem;">2024 - Present</span>
+                        <p style="margin-top: 10px; color: var(--text-secondary);">Leading development of scalable web
+                            applications and 3D interfaces.</p>
+                    </div>
+
+                    <div style="margin-bottom: 50px; position: relative;">
+                        <div
+                            style="position: absolute; left: -41px; top: 0; width: 20px; height: 20px; background: var(--bg-dark); border: 2px solid var(--color-cyan); border-radius: 50%;">
+                        </div>
+                        <h3 style="color: #fff">Freelance Creative Coder</h3>
+                        <span style="color: var(--color-purple); font-size: 0.9rem;">2022 - 2024</span>
+                        <p style="margin-top: 10px; color: var(--text-secondary);">Delivered 20+ projects including
+                            e-commerce sites, portfolios, and interactive dashboards.</p>
+                    </div>
+
+                    <div style="margin-bottom: 50px; position: relative;">
+                        <div
+                            style="position: absolute; left: -41px; top: 0; width: 20px; height: 20px; background: var(--bg-dark); border: 2px solid var(--color-cyan); border-radius: 50%;">
+                        </div>
+                        <h3 style="color: #fff">Web Development Student</h3>
+                        <span style="color: var(--color-purple); font-size: 0.9rem;">2020 - 2022</span>
+                        <p style="margin-top: 10px; color: var(--text-secondary);">Mastered HTML, CSS, JavaScript, and
+                            Python foundation.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <footer>
-            <p>&copy; 2025 Elisha Straton Kimario. All rights reserved.</p>
+            <div class="container">
+                <p style="color: var(--text-secondary);">&copy; 2026 Elisha Straton.</p>
+            </div>
         </footer>
     </div>
 
+    <style>
+        .tech-bubble {
+            padding: 10px 20px;
+            border: 1px solid var(--color-cyan);
+            border-radius: 50px;
+            color: #fff;
+            font-family: monospace;
+            cursor: default;
+            transition: 0.3s;
+        }
+
+        .tech-bubble:hover {
+            background: var(--color-cyan);
+            color: #000;
+            box-shadow: 0 0 15px var(--color-cyan);
+        }
+    </style>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        // Custom cursor
-        const cursor = document.querySelector('.custom-cursor');
-        const follower = document.querySelector('.cursor-follower');
-        let mouseX = 0, mouseY = 0;
-        let followerX = 0, followerY = 0;
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX; mouseY = e.clientY;
-            cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
-        });
-        function animateFollower() {
-            followerX += (mouseX - followerX) * 0.1; followerY += (mouseY - followerY) * 0.1;
-            follower.style.left = (followerX - 20) + 'px'; follower.style.top = (followerY - 20) + 'px';
-            requestAnimationFrame(animateFollower);
-        }
-        animateFollower();
-
-        // Three.js Scene
-        const container = document.getElementById('canvas-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        container.appendChild(renderer.domElement);
-        camera.position.z = 5;
-
-        // Simple Particles
-        const geo = new THREE.BufferGeometry();
-        const count = 1000;
-        const pos = new Float32Array(count * 3);
-        for (let i = 0; i < count * 3; i++) pos[i] = (Math.random() - 0.5) * 20;
-        geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-        const mat = new THREE.PointsMaterial({ size: 0.02, color: 0xE31E24, transparent: true, opacity: 0.8 });
-        const mesh = new THREE.Points(geo, mat);
-        scene.add(mesh);
-
-        function animate() {
-            requestAnimationFrame(animate);
-            mesh.rotation.y += 0.001;
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        // Music & Loader Logic
-        const bgMusic = document.getElementById('bgMusic');
-        const entryOverlay = document.getElementById('entry-overlay');
-        const enterBtn = document.getElementById('enterBtn');
-        const content = document.querySelector('.content');
-        const playBtn = document.getElementById('playBtn');
-        const loaderPercentage = document.getElementById('loaderPercentage');
-        const loaderBarFill = document.getElementById('loaderBarFill');
-        const loaderContainer = document.querySelector('.loader-container');
-
-        let isPlaying = false;
-        let progress = 0;
-
-        function updateLoader() {
-            if (progress < 100) {
-                progress += Math.random() * 2.5;
-                if (progress > 100) progress = 100;
-                loaderPercentage.textContent = Math.floor(progress).toString().padStart(2, '0');
-                loaderBarFill.style.width = progress + '%';
-                requestAnimationFrame(updateLoader);
-            } else {
-                setTimeout(() => {
-                    loaderContainer.style.opacity = '0';
-                    setTimeout(() => {
-                        loaderContainer.style.display = 'none';
-                        enterBtn.classList.add('visible');
-                    }, 500);
-                }, 500);
-            }
-        }
-
-        if (sessionStorage.getItem('experienceStarted') !== 'true') {
-            updateLoader();
-        }
-
-        function startExperience() {
-            entryOverlay.style.opacity = '0';
-            setTimeout(() => {
-                entryOverlay.style.display = 'none';
-                content.classList.add('visible');
-                sessionStorage.setItem('experienceStarted', 'true');
-                bgMusic.muted = false;
-                bgMusic.play().then(() => { isPlaying = true; playBtn.textContent = '⏸'; });
-            }, 500);
-        }
-
-        enterBtn.addEventListener('click', startExperience);
-        if (sessionStorage.getItem('experienceStarted') === 'true') {
-            entryOverlay.style.display = 'none'; content.classList.add('visible');
-            bgMusic.muted = false; bgMusic.play().then(() => { isPlaying = true; playBtn.textContent = '⏸'; })
-                .catch(() => { entryOverlay.style.display = 'flex'; content.classList.remove('visible'); updateLoader(); });
-        }
-
-        playBtn.addEventListener('click', () => {
-            if (isPlaying) { bgMusic.pause(); playBtn.textContent = '▶'; }
-            else { bgMusic.play(); playBtn.textContent = '⏸'; }
-            isPlaying = !isPlaying;
-        });
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const nav = document.querySelector('nav');
-
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-        });
-
-        // Close menu on link click
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                menuToggle.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

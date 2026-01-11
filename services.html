@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Elisha Straton</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="overlay-gradient"></div>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Elisha Straton Logo">
+            <span>STRATON</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+    </header>
+
+    <div class="main-wrapper">
+        <section style="padding-top: 150px;">
+            <div class="container">
+                <h1 class="section-title">My <span>Services</span></h1>
+                <p class="hero-desc" style="margin: 0 auto 50px; text-align: center;">
+                    Delivering high-end digital solutions tailored to your unique needs.
+                </p>
+
+                <!-- Detailed Services Grid -->
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon">🚀</div>
+                        <h3>Custom Web Development</h3>
+                        <p>Building tailored websites from scratch using the latest technologies (React, Next.js,
+                            Django). Fast, secure, and scalable.</p>
+                        <ul style="list-style: none; margin-top: 20px; color: var(--text-secondary);">
+                            <li>• Corporate Websites</li>
+                            <li>• Portfolios</li>
+                            <li>• Single Page Applications (SPAs)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🛍️</div>
+                        <h3>E-Commerce Solutions</h3>
+                        <p>End-to-end e-commerce development with payment gateway integration, inventory management, and
+                            smooth user checkout flows.</p>
+                        <ul style="list-style: none; margin-top: 20px; color: var(--text-secondary);">
+                            <li>• Shopify / WooCommerce</li>
+                            <li>• Custom Storefronts</li>
+                            <li>• Stripe/PayPal Integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Performance Optimization</h3>
+                        <p>Speeding up existing websites, improving SEO rankings, and ensuring 100/100 Lighthouse
+                            scores.</p>
+                        <ul style="list-style: none; margin-top: 20px; color: var(--text-secondary);">
+                            <li>• Core Web Vitals</li>
+                            <li>• SEO Audits</li>
+                            <li>• Server Optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🖌️</div>
+                        <h3>UI/UX Design</h3>
+                        <p>Creating intuitive and visually stunning interfaces. From wireframing to high-fidelity
+                            prototypes and final implementation.</p>
+                        <ul style="list-style: none; margin-top: 20px; color: var(--text-secondary);">
+                            <li>• Figma Prototyping</li>
+                            <li>• User Research</li>
+                            <li>• Design Systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🔮</div>
+                        <h3>3D & Interactive Web</h3>
+                        <p>Integrating 3D models and interactive elements into websites for a unique user experience.
+                        </p>
+                        <ul style="list-style: none; margin-top: 20px; color: var(--text-secondary);">
+                            <li>• Three.js / WebGL</li>
+                            <li>• Interactive Visualizations</li>
+                            <li>• Product Showcases</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🤖</div>
+                        <h3>AI Integration</h3>
+                        <p>Leveraging AI to enhance web applications, chatbots, and data analysis tools.</p>
+                        <ul style="list-style: none; margin-top: 20px; color: var(--text-secondary);">
+                            <li>• Chatbot Development</li>
+                            <li>• OpenAI API Integration</li>
+                            <li>• Automated Workflows</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div style="text-align: center; margin-top: 100px;">
+                    <h2 style="margin-bottom: 30px;">Ready to start a project?</h2>
+                    <a href="contact.html" class="btn btn-glow">Get a Quote</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-socials">
+                    <a href="#" class="social-link">GH</a>
+                    <a href="#" class="social-link">LN</a>
+                    <a href="#" class="social-link">TW</a>
+                    <a href="#" class="social-link">IG</a>
+                </div>
+                <p style="color: var(--text-secondary);">&copy; 2026 Elisha Straton. Crafted with <span
+                        style="color: var(--color-purple);">♥</span> and Code.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
