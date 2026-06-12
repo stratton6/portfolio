@@ -1,208 +1,743 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elisha Straton | Creative Technologist & Full Stack Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elisha Straton Kimario | Software Developer & Systems Learner</title>
 
-    <!-- Design & Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <!-- SEO -->
+  <meta name="description" content="Elisha Straton Kimario — ambitious software developer from Arusha, Tanzania. Full-stack, Git workflows, systems engineering, Linux administration.">
+  <meta name="keywords"    content="Elisha Straton Kimario, Software Developer, Systems Engineer, Git, GitHub, Tanzania, Python, React, Django, Linux">
+  <meta name="author"      content="Elisha Straton Kimario">
+  <meta name="robots"      content="index, follow">
+  <link rel="canonical"    href="https://elishastraton.org/">
 
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Elisha Straton Kimario - Award-winning Full-Stack Web Developer specializing in modern web applications, 3D graphics, and creative coding.">
-    <meta name="keywords"
-        content="Elisha Straton, Elisha Straton Kimario, Web Developer, Full Stack Developer, Creative Technologist, 3D Graphics, React, Django, Three.js">
-    <meta name="author" content="Elisha Straton Kimario">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://elishastraton.org/">
+  <meta property="og:title"       content="Elisha Straton Kimario | Software Developer">
+  <meta property="og:description" content="Ambitious software developer from Arusha, Tanzania — passionate about systems engineering, Git collaboration, and modern web.">
+  <meta property="og:image"       content="https://elishastraton.org/assets/Elisha%20Straton.jpg">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://elishastraton.org/">
-    <meta property="og:title" content="Elisha Straton Kimario | Creative Technologist & Full Stack Developer">
-    <meta property="og:description"
-        content="Award-winning Full-Stack Web Developer specializing in modern web applications, 3D graphics, and creative coding.">
-    <meta property="og:image" content="https://elishastraton.org/elisha%20straton.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Elisha Straton Kimario - Professional Web Developer">
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Elisha Straton Kimario | Portfolio">
+  <meta name="twitter:description" content="Software developer & systems learner from Arusha, Tanzania.">
+  <meta name="twitter:image"       content="https://elishastraton.org/assets/Elisha%20Straton.jpg">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://elishastraton.org/">
-    <meta name="twitter:title" content="Elisha Straton Kimario | Creative Technologist">
-    <meta name="twitter:description"
-        content="Award-winning Full-Stack Web Developer specializing in modern web applications and 3D graphics.">
-    <meta name="twitter:image" content="https://elishastraton.org/elisha%20straton.jpg">
-    <meta name="twitter:image:alt" content="Elisha Straton Kimario">
+  <!-- Icons + Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://elishastraton.org/">
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Elisha Straton Kimario",
-      "url": "https://elishastraton.org",
-      "image": "https://elishastraton.org/elisha%20straton.jpg",
-      "jobTitle": "Full-Stack Web Developer & Creative Technologist",
-      "description": "Award-winning web developer specializing in modern web applications, 3D graphics, and creative coding",
-      "alternateName": "Elisha Straton",
-      "sameAs": [
-        "https://github.com/elishastraton",
-        "https://linkedin.com/in/elishastraton"
-      ],
-      "knowsAbout": ["Web Development", "Full-Stack Development", "3D Graphics", "React", "Django", "Three.js"]
-    }
-    </script>
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"Person",
+    "name":"Elisha Straton Kimario","url":"https://elishastraton.org",
+    "image":"https://elishastraton.org/assets/Elisha%20Straton.jpg",
+    "jobTitle":"Software Developer",
+    "address":{"@type":"PostalAddress","addressLocality":"Arusha","addressCountry":"TZ"},
+    "sameAs":["https://github.com/elishastraton","https://linkedin.com/in/elishastraton"]
+  }
+  </script>
 </head>
-
 <body>
 
-    <!-- 3D Background Canvas -->
-    <canvas id="bg-canvas"></canvas>
-    <div class="overlay-gradient"></div>
+<!-- Particle Canvas -->
+<canvas id="particles-canvas"></canvas>
 
-    <!-- Navigation -->
-    <header>
-        <a href="index.html" class="logo">
-            <img src="logo.png" alt="Elisha Straton Logo">
-            <span>STRATON</span>
-        </a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+<!-- Navigation Progress Bar -->
+<div class="nav-progress" id="nav-progress"></div>
+
+<!-- ══════════════════════ HEADER ══════════════════════ -->
+<header>
+  <div class="container nav-container">
+
+    <a href="#" class="logo" onclick="event.preventDefault();document.getElementById('arrow-left')&&false;">
+      <img src="assets/logo.png" alt="ESK Logo">
+      <span>ES<span class="logo-dot">K</span></span>
+    </a>
+
+    <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Primary">
+      <a href="#home"       class="nav-link active" role="menuitem">Home</a>
+      <a href="#about"      class="nav-link"        role="menuitem">About</a>
+      <a href="#skills"     class="nav-link"        role="menuitem">Skills</a>
+      <a href="#projects"   class="nav-link"        role="menuitem">Projects</a>
+      <a href="#education"  class="nav-link"        role="menuitem">Education</a>
+      <a href="#contact"    class="nav-link"        role="menuitem">Contact</a>
+    </nav>
+
+    <div class="nav-controls">
+      <button class="theme-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+      </button>
+      <button class="menu-btn" id="menu-btn" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Floating Arrows -->
+<button id="arrow-left"  class="page-arrow page-arrow-left"  aria-label="Previous page"><i class="fas fa-chevron-left"></i></button>
+<button id="arrow-right" class="page-arrow page-arrow-right" aria-label="Next page"><i class="fas fa-chevron-right"></i></button>
+
+<!-- Page Indicator Dots -->
+<nav class="page-dots" aria-label="Page navigation">
+  <button class="page-dot active" aria-label="Page 1: Home"></button>
+  <button class="page-dot"        aria-label="Page 2: About"></button>
+  <button class="page-dot"        aria-label="Page 3: Skills"></button>
+  <button class="page-dot"        aria-label="Page 4: Projects"></button>
+  <button class="page-dot"        aria-label="Page 5: Education"></button>
+  <button class="page-dot"        aria-label="Page 6: Contact"></button>
+</nav>
+
+<!-- ══════════════════════ VIEWPORT ══════════════════════ -->
+<div class="viewport-wrapper">
+<div class="pages-wrapper" id="pages-wrapper">
+
+
+<!-- ┌──────────────────────────────────────────────────────┐ -->
+<!-- │  PAGE 1 · HERO                                       │ -->
+<!-- └──────────────────────────────────────────────────────┘ -->
+<section id="home" class="page active" aria-label="Home">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Left: Text -->
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span>Open to Opportunities</span>
         </div>
-    </header>
 
-    <div class="main-wrapper">
+        <h1 class="hero-title">
+          Hi, I'm
+          <span class="hero-name" data-text="Elisha Straton Kimario">
+            Elisha Straton Kimario
+          </span>
+        </h1>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <p class="hero-subtitle">Web Developer & Creative Technologist</p>
-                    <h1 class="hero-glitch">
-                        Hello, I am<br>
-                        <span class="typing-text" id="typingText"></span><span class="cursor-blink"></span>
-                    </h1>
-                    <p class="hero-desc">
-                        Award-winning Full-Stack Web Developer specializing in modern web applications, 3D graphics,
-                        and creative coding. I transform ideas into powerful digital experiences.
-                    </p>
-                    <div class="cta-buttons">
-                        <a href="work.html" class="btn btn-primary">View Work</a>
-                        <a href="contact.html" class="btn btn-glow">Hire Me</a>
-                    </div>
-                </div>
-                <div class="hero-img-container">
-                    <!-- User Image -->
-                    <img src="elisha%20straton.jpg" alt="Elisha Straton Kimario" class="hero-img">
-                </div>
+        <div class="hero-subtitle-wrap">
+          <i class="fas fa-terminal hero-subtitle-icon"></i>
+          <span class="hero-subtitle" id="hero-subtitle"></span>
+        </div>
+
+        <p class="hero-desc">
+          An ambitious, self-driven developer from Arusha, Tanzania —
+          passionate about version control workflows, systems administration,
+          and engineering high-performance full-stack applications.
+        </p>
+
+        <div class="hero-ctas">
+          <button class="btn btn-primary nav-link" data-page="3">
+            <i class="fas fa-folder-open"></i> View Projects
+          </button>
+          <a href="assets/Elisha-Straton-CV.pdf" download class="btn btn-outline">
+            <i class="fas fa-download"></i> Download CV
+          </a>
+          <button class="btn btn-ghost nav-link" data-page="5">
+            <i class="fas fa-paper-plane"></i> Contact Me
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-num">3+</span>
+            <span class="stat-label">Projects Live</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num">A-Level</span>
+            <span class="stat-label">PCM Graduate</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num">Linux</span>
+            <span class="stat-label">Daily Driver</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Image -->
+      <div class="hero-visual">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <div class="hero-img-frame">
+          <img src="assets/Elisha Straton.jpg" alt="Elisha Straton Kimario — Software Developer" class="hero-img">
+        </div>
+
+        <div class="chip chip-1">
+          <span class="chip-label">Based In</span>
+          <span class="chip-value">Arusha, TZ</span>
+        </div>
+        <div class="chip chip-2">
+          <span class="chip-label">Focus</span>
+          <span class="chip-value">Full-Stack &amp; Git</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ┌──────────────────────────────────────────────────────┐ -->
+<!-- │  PAGE 2 · ABOUT                                      │ -->
+<!-- └──────────────────────────────────────────────────────┘ -->
+<section id="about" class="page" aria-label="About Me">
+  <div class="container">
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="about-layout">
+
+      <!-- Left: Bio -->
+      <div class="about-body">
+        <p class="about-intro">
+          Building things that matter,<br>
+          <span>one commit at a time.</span>
+        </p>
+
+        <div class="about-body">
+          <p>
+            I am <strong>Elisha Straton Kimario</strong>, an analytical thinker and developer
+            with a deep interest in software engineering, systems administration,
+            and Git-based collaborative workflows.
+          </p>
+          <p>
+            Having recently completed my Advanced Level studies at
+            <strong>Tabora Boys' Secondary School</strong> in Advanced Mathematics,
+            Physics, and Chemistry (PCM), I carry a rigorous quantitative mindset
+            into every codebase I touch — precision, structure, and clean logic
+            are non-negotiables.
+          </p>
+          <p>
+            Whether configuring Linux environments (Fedora, Ubuntu), architecting
+            Git branching strategies, or engineering web apps with Django and React —
+            I care deeply about doing things correctly, and doing them well.
+          </p>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="d-label">Focus</span>
+            <span class="d-val">Full-Stack &amp; Systems</span>
+          </div>
+          <div class="detail-item">
+            <span class="d-label">Version Control</span>
+            <span class="d-val">Git, GitHub Workflows</span>
+          </div>
+          <div class="detail-item">
+            <span class="d-label">OS Environments</span>
+            <span class="d-val">Fedora · Ubuntu · Linux</span>
+          </div>
+          <div class="detail-item">
+            <span class="d-label">A-Level Subjects</span>
+            <span class="d-val">Maths · Physics · Chemistry</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Core Competencies -->
+      <div class="comp-stack">
+        <div class="comp-card">
+          <div class="comp-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="comp-text">
+            <h4>Self-Directed Learner</h4>
+            <p>Rapidly acquires frameworks and toolchains through documentation, community learning, and disciplined practice.</p>
+          </div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-icon"><i class="fas fa-brain"></i></div>
+          <div class="comp-text">
+            <h4>Analytical Problem Solver</h4>
+            <p>Advanced mathematical and scientific background translates directly into structured, optimized code and algorithmic logic.</p>
+          </div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-icon"><i class="fas fa-code-branch"></i></div>
+          <div class="comp-text">
+            <h4>Git-First Collaborator</h4>
+            <p>Works inside strict version-controlled environments — branching strategies, pull request reviews, semantic commits, conflict resolution.</p>
+          </div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-icon"><i class="fas fa-server"></i></div>
+          <div class="comp-text">
+            <h4>Systems Thinker</h4>
+            <p>Understands infrastructure beneath the application layer — shell configuration, Linux administration, package management, and automation.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ┌──────────────────────────────────────────────────────┐ -->
+<!-- │  PAGE 3 · SKILLS                                     │ -->
+<!-- └──────────────────────────────────────────────────────┘ -->
+<section id="skills" class="page" aria-label="Technical Skills">
+  <div class="container">
+    <h2 class="section-title">Technical <span>Skills</span></h2>
+    <div class="skills-page-grid">
+
+      <!-- Group 1 -->
+      <div class="glass-card">
+        <h3 class="skill-group-title">
+          <span class="skill-group-icon"><i class="fas fa-code"></i></span>
+          Languages
+        </h3>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">JavaScript ES6+</span>
+              <span class="skill-pct">85%</span>
             </div>
-        </section>
-
-        <!-- What I Do Preview -->
-        <section>
-            <div class="container">
-                <h2 class="section-title">My <span>Expertise</span></h2>
-                <div class="card-grid">
-                    <div class="card">
-                        <div class="card-icon">💻</div>
-                        <h3>Web Development</h3>
-                        <p>Full-stack engineered solutions using React, Node.js, and modern frameworks.
-                            Performance-obsessed and scalable.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">🧊</div>
-                        <h3>3D Experiences</h3>
-                        <p>Interactive 3D content for the web using Three.js and WebGL. Making the browser come alive.
-                        </p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">🎨</div>
-                        <h3>Creative Design</h3>
-                        <p>UI/UX design that focuses on fluid interactions, glassmorphism, and futuristic aesthetics.
-                        </p>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 50px;">
-                    <a href="services.html" class="btn btn-primary">View All Services</a>
-                </div>
+            <div class="bar-track"><div class="bar-fill" data-pct="85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">Python</span>
+              <span class="skill-pct">80%</span>
             </div>
-        </section>
-
-        <!-- Selected Work Preview -->
-        <section>
-            <div class="container">
-                <h2 class="section-title">Selected <span>Work</span></h2>
-                <div class="card-grid">
-                    <div class="card">
-                        <h3>School Management System</h3>
-                        <p>A comprehensive Django-based platform for school administration.</p>
-                        <a href="work.html"
-                            style="color: var(--color-cyan); margin-top: 10px; display: inline-block;">View Project
-                            →</a>
-                    </div>
-                    <div class="card">
-                        <h3>AI Research Portfolio</h3>
-                        <p>Showcasing advanced machine learning models and visualizations.</p>
-                        <a href="work.html"
-                            style="color: var(--color-cyan); margin-top: 10px; display: inline-block;">View Project
-                            →</a>
-                    </div>
-                    <div class="card">
-                        <h3>E-Commerce Platform</h3>
-                        <p>High-conversion online store with seamless payment integration.</p>
-                        <a href="work.html"
-                            style="color: var(--color-cyan); margin-top: 10px; display: inline-block;">View Project
-                            →</a>
-                    </div>
-                </div>
+            <div class="bar-track"><div class="bar-fill" data-pct="80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">C++</span>
+              <span class="skill-pct">70%</span>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-socials">
-                    <a href="#" class="social-link">GH</a>
-                    <a href="#" class="social-link">LN</a>
-                    <a href="#" class="social-link">TW</a>
-                    <a href="#" class="social-link">IG</a>
-                </div>
-                <p style="color: var(--text-secondary);">&copy; 2026 Elisha Straton. Crafted with <span
-                        style="color: var(--color-purple);">♥</span> and Code.</p>
+            <div class="bar-track"><div class="bar-fill" data-pct="70%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">HTML5 &amp; CSS3</span>
+              <span class="skill-pct">92%</span>
             </div>
-        </footer>
+            <div class="bar-track"><div class="bar-fill" data-pct="92%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">Bash Scripting</span>
+              <span class="skill-pct">78%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" data-pct="78%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 2 -->
+      <div class="glass-card">
+        <h3 class="skill-group-title">
+          <span class="skill-group-icon"><i class="fas fa-cubes"></i></span>
+          Frameworks
+        </h3>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">React.js</span>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" data-pct="75%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">Django</span>
+              <span class="skill-pct">72%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" data-pct="72%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">Tailwind CSS</span>
+              <span class="skill-pct">82%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" data-pct="82%"></div></div>
+          </div>
+        </div>
+
+        <div class="tech-tags" style="margin-top:20px;">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Django</span>
+          <span class="tech-tag">Tailwind</span>
+          <span class="tech-tag">REST APIs</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Vanilla JS</span>
+        </div>
+      </div>
+
+      <!-- Group 3 -->
+      <div class="glass-card">
+        <h3 class="skill-group-title">
+          <span class="skill-group-icon"><i class="fas fa-terminal"></i></span>
+          Systems &amp; DevOps
+        </h3>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">Git &amp; GitHub Workflows</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" data-pct="90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">Linux Admin (Fedora/Ubuntu)</span>
+              <span class="skill-pct">76%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" data-pct="76%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">Command Line Tools</span>
+              <span class="skill-pct">82%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" data-pct="82%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">PostgreSQL Basics</span>
+              <span class="skill-pct">65%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" data-pct="65%"></div></div>
+          </div>
+        </div>
+
+        <div class="tech-tags" style="margin-top:20px;">
+          <span class="tech-tag">Git Branching</span>
+          <span class="tech-tag">Pull Requests</span>
+          <span class="tech-tag">Merge Conflicts</span>
+          <span class="tech-tag">GitHub Pages</span>
+          <span class="tech-tag">Bash</span>
+          <span class="tech-tag">Linux CLI</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ┌──────────────────────────────────────────────────────┐ -->
+<!-- │  PAGE 4 · PROJECTS                                   │ -->
+<!-- └──────────────────────────────────────────────────────┘ -->
+<section id="projects" class="page" aria-label="Projects and Experience">
+  <div class="container">
+
+    <div class="projects-header">
+      <h2 class="section-title" style="margin-bottom:0;">Projects &amp; <span>Experience</span></h2>
+      <div class="filter-pills">
+        <button class="filter-pill active" data-filter="all">All</button>
+        <button class="filter-pill" data-filter="web">Web Dev</button>
+        <button class="filter-pill" data-filter="program">Programs</button>
+      </div>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- Project 1: Tabora Boys School Website -->
+      <div class="proj-card" data-cat="web">
+        <div class="proj-header">
+          <span class="proj-icon"><i class="fas fa-school"></i></span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-badge">Web Development</span>
+          <h3 class="proj-title">Tabora Boys' Secondary School Website</h3>
+          <p class="proj-desc">
+            Engineered and deployed the official responsive website for
+            Tabora Boys' Secondary School — including optimised asset delivery,
+            clean semantic HTML structure, and a fully mobile-responsive layout.
+          </p>
+          <div class="proj-tags">
+            <span class="proj-tag">HTML5/CSS3</span>
+            <span class="proj-tag">JavaScript</span>
+            <span class="proj-tag">Responsive</span>
+            <span class="proj-tag">Performance</span>
+          </div>
+          <a href="https://taboraboys.sc.tz" target="_blank" rel="noopener noreferrer" class="proj-link">
+            Visit Live Site <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2: Personal Portfolio -->
+      <div class="proj-card" data-cat="web">
+        <div class="proj-header">
+          <span class="proj-icon"><i class="fas fa-laptop-code"></i></span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-badge">Web Development</span>
+          <h3 class="proj-title">Personal Portfolio — elishastraton.org</h3>
+          <p class="proj-desc">
+            Designed and built this horizontal book-style portfolio website from scratch
+            using pure HTML, CSS, and vanilla JavaScript — deployed on GitHub Pages
+            with a custom domain, featuring aurora 3D animations and glassmorphism.
+          </p>
+          <div class="proj-tags">
+            <span class="proj-tag">Vanilla JS</span>
+            <span class="proj-tag">CSS3</span>
+            <span class="proj-tag">GitHub Pages</span>
+            <span class="proj-tag">Custom Domain</span>
+          </div>
+          <a href="https://github.com/elishastraton" target="_blank" rel="noopener noreferrer" class="proj-link">
+            GitHub <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3: JA Digital Entrepreneurship -->
+      <div class="proj-card" data-cat="program">
+        <div class="proj-header">
+          <span class="proj-icon"><i class="fas fa-handshake"></i></span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-badge">Program · 2024</span>
+          <h3 class="proj-title">JA Digital Entrepreneurship Program</h3>
+          <p class="proj-desc">
+            Participated as <strong>Tech Lead</strong> in the Junior Achievement Tanzania
+            Digital Entrepreneurship Program — collaborating on technical business modeling
+            and applying software-driven solutions to real-world market challenges.
+          </p>
+          <div class="proj-tags">
+            <span class="proj-tag">Tech Lead</span>
+            <span class="proj-tag">Business Modeling</span>
+            <span class="proj-tag">Digital Marketing</span>
+          </div>
+          <a href="#" class="proj-link">
+            Certificate <i class="fas fa-certificate"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4: Coming Soon -->
+      <div class="proj-card" data-cat="web">
+        <div class="proj-header">
+          <span class="proj-icon" style="opacity:.35;"><i class="fas fa-database"></i></span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-badge">In Progress</span>
+          <h3 class="proj-title">Full-Stack App (Django + React)</h3>
+          <p class="proj-desc">
+            A full-stack application with Django REST framework backend and React frontend —
+            exploring PostgreSQL relationships, JWT authentication, and CRUD operations.
+          </p>
+          <div class="proj-tags">
+            <span class="proj-tag">Django</span>
+            <span class="proj-tag">React</span>
+            <span class="proj-tag">PostgreSQL</span>
+            <span class="proj-tag">REST API</span>
+          </div>
+          <span class="proj-link muted">Coming Soon <i class="fas fa-lock"></i></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ┌──────────────────────────────────────────────────────┐ -->
+<!-- │  PAGE 5 · EDUCATION & CERTS                          │ -->
+<!-- └──────────────────────────────────────────────────────┘ -->
+<section id="education" class="page" aria-label="Education and Certifications">
+  <div class="container">
+    <h2 class="section-title">Education &amp; <span>Certifications</span></h2>
+    <div class="edu-layout">
+
+      <!-- Timeline -->
+      <div>
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-period">2024 — 2026</span>
+            <h3 class="tl-school">Tabora Boys' Secondary School</h3>
+            <span class="tl-level">Advanced Level · Form V &amp; VI</span>
+            <p class="tl-desc">
+              Concentrated in <strong>Advanced Mathematics, Physics, and Chemistry (PCM)</strong>.
+              Built rigorous quantitative analysis skills, logical frameworks, and a structured
+              scientific approach to complex problem solving. National ACSEE examinations
+              completed — results pending.
+            </p>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-period">2020 — 2023</span>
+            <h3 class="tl-school">Edmund Rice Sinon Secondary School</h3>
+            <span class="tl-level">Ordinary Level · Form I — IV</span>
+            <p class="tl-desc">
+              Completed Certificate of Secondary Education Examination (CSEE) with
+              distinction. Active participant in science club exhibitions and mathematics
+              contests. Began independent exploration of programming and web technologies.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div>
+        <div class="cert-list">
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-award"></i></div>
+            <div class="cert-body">
+              <span class="cert-org">Junior Achievement Tanzania</span>
+              <h4>Digital Entrepreneurship Program</h4>
+              <span class="cert-date">2024</span>
+              <p class="cert-note">
+                Completed curriculum covering digital marketing, financial literacy, and
+                tech-driven business modeling. Served as Technical Lead.
+              </p>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-linux"></i></div>
+            <div class="cert-body">
+              <span class="cert-org">Self-Study · Linux Foundation &amp; Docs</span>
+              <h4>Linux System Administration</h4>
+              <span class="cert-date">Ongoing</span>
+              <p class="cert-note">
+                Hands-on learning path covering shell configuration, storage, networking,
+                service management, and system initialisation on Fedora and Ubuntu.
+              </p>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fab fa-git-alt"></i></div>
+            <div class="cert-body">
+              <span class="cert-org">GitHub Learning Lab &amp; Practice</span>
+              <h4>Git &amp; GitHub Collaboration Workflows</h4>
+              <span class="cert-date">2024 — Present</span>
+              <p class="cert-note">
+                Branching strategies, PR-based code reviews, rebase workflows,
+                conflict resolution, and GitHub Actions fundamentals.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ┌──────────────────────────────────────────────────────┐ -->
+<!-- │  PAGE 6 · CONTACT                                    │ -->
+<!-- └──────────────────────────────────────────────────────┘ -->
+<section id="contact" class="page" aria-label="Contact">
+  <div class="container">
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <div class="contact-layout">
+
+      <!-- Info -->
+      <div>
+        <h3 class="contact-headline">
+          Let's build something<br><span>awesome together</span>
+        </h3>
+        <p class="contact-sub">
+          Internship opportunities, collaboration proposals, or just want to
+          discuss Git workflows and Linux environments — I'm all ears.
+          Drop me a message and I'll respond promptly.
+        </p>
+
+        <div class="contact-items">
+          <div class="ci-card">
+            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="ci-label">Email</span>
+              <p class="ci-val"><a href="mailto:contact@elishastraton.org">contact@elishastraton.org</a></p>
+            </div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <span class="ci-label">Location</span>
+              <p class="ci-val">Arusha, Tanzania · Remote-Ready</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="socials">
+          <a href="https://github.com/elishastraton" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/elishastraton" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://taboraboys.sc.tz" target="_blank" rel="noopener" class="social-btn" aria-label="Tabora Boys School Website">
+            <i class="fas fa-school"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="glass-card">
+        <form id="contact-form" class="contact-form" novalidate>
+
+          <div class="fg">
+            <label class="fl" for="f-name">Full Name</label>
+            <input id="f-name" type="text" class="fc" placeholder="E.g. Jane Doe">
+            <span class="err">Name is required.</span>
+          </div>
+
+          <div class="fg">
+            <label class="fl" for="f-email">Email Address</label>
+            <input id="f-email" type="email" class="fc" placeholder="E.g. jane@example.com">
+            <span class="err">A valid email is required.</span>
+          </div>
+
+          <div class="fg">
+            <label class="fl" for="f-msg">Message</label>
+            <textarea id="f-msg" class="fc" rows="4" placeholder="Tell me about your project or opportunity…"></textarea>
+            <span class="err">Please write a message.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            Send Message <i class="fas fa-paper-plane"></i>
+          </button>
+
+          <div id="form-feedback" class="form-feedback"></div>
+        </form>
+      </div>
 
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="main.js"></script>
-</body>
+    <!-- Footer strip -->
+    <div class="page-footer">
+      <p class="footer-brand">ELISHA STRATON KIMARIO</p>
+      <p class="footer-copy">&copy; 2026 Elisha Straton Kimario. All rights reserved.</p>
+      <p class="footer-credit">Crafted with <i class="fas fa-heart"></i> &amp; clean code — Arusha, Tanzania.</p>
+    </div>
 
+  </div>
+</section>
+
+
+</div><!-- /pages-wrapper -->
+</div><!-- /viewport-wrapper -->
+
+<script src="script.js"></script>
+
+<!-- CTA buttons on hero that trigger page nav -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.btn[data-page]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.page, 10);
+        const navLinks = document.querySelectorAll('.nav-link');
+        if (navLinks[idx]) navLinks[idx].click();
+      });
+    });
+  });
+</script>
+
+</body>
 </html>
