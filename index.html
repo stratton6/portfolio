@@ -5,57 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elisha Straton Kimario | Software Developer · Arusha, Tanzania</title>
 
-  <!-- SEO Meta -->
   <meta name="description" content="Elisha Straton Kimario — software developer from Arusha, Tanzania. Full-stack, Git workflows, systems engineering, Django, React, Linux.">
-  <meta name="keywords"    content="Elisha Straton Kimario, Software Developer, Systems Engineer, Git, Django, React, Tanzania, Full-Stack, Linux, GitHub Pages">
+  <meta name="keywords"    content="Elisha Straton Kimario, Software Developer, Django, React, Git, Linux, Tanzania, Full-Stack, GitHub Pages">
   <meta name="author"      content="Elisha Straton Kimario">
   <meta name="robots"      content="index, follow">
   <link rel="canonical"    href="https://elishastraton.org/">
 
-  <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://elishastraton.org/">
   <meta property="og:title"       content="Elisha Straton Kimario · Software Developer">
-  <meta property="og:description" content="Ambitious developer from Arusha, TZ — systems, full-stack & Git.">
+  <meta property="og:description" content="Ambitious developer from Arusha, TZ — full-stack, systems & Git.">
   <meta property="og:image"       content="https://elishastraton.org/assets/Elisha%20Straton.jpg">
   <meta name="twitter:card"       content="summary_large_image">
 
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- JSON-LD -->
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"Elisha Straton Kimario",
    "url":"https://elishastraton.org","jobTitle":"Software Developer",
+   "email":"elishastraton1@gmail.com",
    "address":{"@type":"PostalAddress","addressLocality":"Arusha","addressCountry":"TZ"},
-   "sameAs":["https://github.com/elishastraton","https://linkedin.com/in/elishastraton"]}
+   "sameAs":["https://github.com/stratton6"]}
   </script>
 </head>
 <body>
 
-<!-- ── Background layers (below everything) ── -->
-<div class="bg-mesh"  aria-hidden="true"></div>
-<div class="bg-grid"  aria-hidden="true"></div>
+<!-- ── Background layers ── -->
+<div class="bg-mesh"    aria-hidden="true"></div>
+<div class="bg-blob bg-blob-1" aria-hidden="true"></div>
+<div class="bg-blob bg-blob-2" aria-hidden="true"></div>
+<div class="bg-blob bg-blob-3" aria-hidden="true"></div>
+<div class="bg-grid"    aria-hidden="true"></div>
+<div class="bg-stripes" aria-hidden="true"></div>
 <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
 <!-- ── Progress bar ── -->
 <div class="nav-progress" id="nav-progress" aria-hidden="true"></div>
 
-<!-- ════════════════════════════════════════════
+<!-- ══════════════════════════════════════
      HEADER
-════════════════════════════════════════════ -->
+══════════════════════════════════════ -->
 <header>
   <div class="container nav-container">
 
-    <!-- Logo -->
-    <a href="#" class="logo" onclick="return false;" aria-label="Elisha Straton Kimario — Home">
+    <a href="#" class="logo" onclick="return false;" aria-label="Home">
       <img src="assets/logo.png" alt="ESK logo">
       <span>ES<span class="logo-acc">K</span></span>
     </a>
 
-    <!-- Primary nav -->
     <nav id="nav-menu" class="nav-menu" role="navigation" aria-label="Site sections">
       <a class="nav-link active" href="#home"      role="menuitem">Home</a>
       <a class="nav-link"        href="#about"     role="menuitem">About</a>
@@ -66,11 +64,9 @@
     </nav>
 
     <div class="nav-controls">
-      <!-- Dark / Light toggle -->
       <button class="icon-btn" id="theme-btn" aria-label="Toggle dark / light mode">
         <i class="fas fa-moon"></i>
       </button>
-      <!-- Hamburger -->
       <button class="menu-btn" id="menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -79,12 +75,12 @@
   </div>
 </header>
 
-<!-- ── Floating page arrows ── -->
-<button id="arrow-left"  class="page-arrow page-arrow-left"  aria-label="Previous section"><i class="fas fa-chevron-left"></i></button>
-<button id="arrow-right" class="page-arrow page-arrow-right" aria-label="Next section"><i class="fas fa-chevron-right"></i></button>
+<!-- Arrows -->
+<button id="arrow-left"  class="page-arrow page-arrow-left"  aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+<button id="arrow-right" class="page-arrow page-arrow-right" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
 
-<!-- ── Page dots ── -->
-<nav class="page-dots" aria-label="Section quick navigation">
+<!-- Dots -->
+<nav class="page-dots" aria-label="Section navigation">
   <button class="page-dot active" aria-label="Home"></button>
   <button class="page-dot"        aria-label="About"></button>
   <button class="page-dot"        aria-label="Skills"></button>
@@ -93,26 +89,25 @@
   <button class="page-dot"        aria-label="Contact"></button>
 </nav>
 
-<!-- ════════════════════════════════════════════
-     HORIZONTAL SLIDER
-════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     SLIDER
+══════════════════════════════════════ -->
 <div class="viewport-wrapper">
 <div class="pages-wrapper" id="pages-wrapper">
 
 
-<!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║  PAGE 1 · HERO                           ║ -->
-<!-- ╚══════════════════════════════════════════╝ -->
+<!-- ╔════════════════════════════════════╗ -->
+<!-- ║  PAGE 1 — HERO                    ║ -->
+<!-- ╚════════════════════════════════════╝ -->
 <section id="home" class="page active" aria-label="Home">
   <div class="container">
     <div class="hero-grid">
 
-      <!-- ── Left: Content ── -->
+      <!-- Content -->
       <div>
-
         <div class="hero-status">
           <span class="status-dot"></span>
-          <span>Open to Opportunities &amp; Internships</span>
+          Open to Opportunities &amp; Internships
         </div>
 
         <h1 class="hero-h1">
@@ -127,16 +122,16 @@
 
         <p class="hero-desc">
           Self-driven developer from <strong>Arusha, Tanzania</strong> —
-          engineering clean full-stack apps, mastering Git collaboration,
+          engineering clean full-stack applications, mastering Git collaboration,
           and building reliable systems on Linux.
         </p>
 
         <div class="hero-ctas">
-          <button class="btn btn-primary" data-page="3" id="view-projects-btn">
+          <button class="btn btn-primary" data-page="3">
             <i class="fas fa-folder-open"></i> View Projects
           </button>
-          <a href="assets/Elisha-Straton-CV.pdf" download class="btn btn-outline">
-            <i class="fas fa-download"></i> Download CV
+          <a href="mycv.pdf" target="_blank" class="btn btn-outline">
+            <i class="fas fa-file-pdf"></i> Open My CV
           </a>
           <button class="btn btn-ghost" data-page="5">
             <i class="fas fa-paper-plane"></i> Let's Talk
@@ -149,8 +144,8 @@
             <span class="h-stat-lbl">Live Projects</span>
           </div>
           <div class="h-stat">
-            <span class="h-stat-num">PCM</span>
-            <span class="h-stat-lbl">A-Level Focus</span>
+            <span class="h-stat-num">A-Level</span>
+            <span class="h-stat-lbl">Graduate</span>
           </div>
           <div class="h-stat">
             <span class="h-stat-num">Linux</span>
@@ -158,33 +153,28 @@
           </div>
           <div class="h-stat">
             <span class="h-stat-num">Git</span>
-            <span class="h-stat-lbl">Workflow Pro</span>
+            <span class="h-stat-lbl">Expert Workflow</span>
           </div>
         </div>
-
       </div>
 
-      <!-- ── Right: Visual ── -->
+      <!-- Visual -->
       <div class="hero-visual">
-        <!-- Decorative rings -->
         <div class="hero-ring" aria-hidden="true"></div>
         <div class="hero-ring" aria-hidden="true"></div>
         <div class="hero-ring" aria-hidden="true"></div>
 
-        <!-- Blobs -->
         <div class="blob blob-1" aria-hidden="true"></div>
         <div class="blob blob-2" aria-hidden="true"></div>
         <div class="blob blob-3" aria-hidden="true"></div>
 
-        <!-- Profile photo -->
         <div class="hero-photo-wrap">
           <img class="hero-photo"
                src="assets/Elisha Straton.jpg"
-               alt="Elisha Straton Kimario — Software Developer, Arusha Tanzania">
+               alt="Elisha Straton Kimario — Software Developer">
           <div class="hero-photo-overlay" aria-hidden="true"></div>
         </div>
 
-        <!-- Floating chips -->
         <div class="f-chip f-chip-1" aria-hidden="true">
           <div class="f-chip-icon"><i class="fas fa-map-marker-alt"></i></div>
           <div>
@@ -200,13 +190,12 @@
           </div>
         </div>
         <div class="f-chip f-chip-3" aria-hidden="true">
-          <div class="f-chip-icon"><i class="fas fa-terminal"></i></div>
+          <div class="f-chip-icon"><i class="fab fa-linux"></i></div>
           <div>
             <div class="f-chip-label">Daily OS</div>
             <div class="f-chip-val">Fedora / Ubuntu</div>
           </div>
         </div>
-
       </div>
 
     </div>
@@ -214,25 +203,29 @@
 </section>
 
 
-<!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║  PAGE 2 · ABOUT                          ║ -->
-<!-- ╚══════════════════════════════════════════╝ -->
+<!-- ╔════════════════════════════════════╗ -->
+<!-- ║  PAGE 2 — ABOUT                   ║ -->
+<!-- ╚════════════════════════════════════╝ -->
 <section id="about" class="page" aria-label="About Me">
   <div class="container">
     <h2 class="section-title">About <span>Me</span></h2>
     <div class="about-grid">
 
-      <!-- Bio -->
       <div>
         <p class="about-big">
           Building things that matter,<br>
           <span class="gtext">one commit at a time.</span>
         </p>
         <p class="about-lead">
-          I'm <strong>Elisha Straton Kimario</strong> — analytical, disciplined, and
-          driven by a love of clean code. My Advanced Level background in
-          <strong>Mathematics, Physics &amp; Chemistry</strong> gives me a rigorous
-          problem-solving lens that I apply to every project.
+          I'm <strong>Elisha Straton Kimario</strong> — analytical, disciplined, and driven
+          by a passion for clean code and modern technology. I approach every project
+          with a rigorous, problem-solving mindset built through years of self-directed
+          learning and hands-on development.
+        </p>
+        <p class="about-lead">
+          From configuring Linux environments to designing full-stack architectures with
+          Django and React — I care about getting things right and building
+          software that genuinely makes a difference.
         </p>
 
         <div class="about-detail-row">
@@ -240,34 +233,33 @@
           <span class="a-pill"><i class="fab fa-git-alt"></i> Git Workflows</span>
           <span class="a-pill"><i class="fab fa-linux"></i> Linux Admin</span>
           <span class="a-pill"><i class="fas fa-server"></i> Systems Engineering</span>
-          <span class="a-pill"><i class="fas fa-database"></i> PostgreSQL</span>
-          <span class="a-pill"><i class="fas fa-map-marker-alt"></i> Arusha, Tanzania</span>
+          <span class="a-pill"><i class="fab fa-python"></i> Django / Python</span>
+          <span class="a-pill"><i class="fab fa-react"></i> React.js</span>
           <span class="a-pill"><i class="fas fa-globe-africa"></i> Remote-Ready</span>
-          <span class="a-pill"><i class="fas fa-graduation-cap"></i> ACSEE PCM</span>
+          <span class="a-pill"><i class="fas fa-graduation-cap"></i> A-Level Graduate</span>
         </div>
       </div>
 
-      <!-- Core strengths grid -->
       <div class="comp-grid">
         <div class="comp-card">
           <div class="comp-icon-wrap"><i class="fas fa-brain"></i></div>
           <div class="comp-h">Analytical Thinker</div>
-          <p class="comp-p">Scientific, structured approach to every problem — no guesswork, just logic.</p>
+          <p class="comp-p">Scientific, structured approach — no guesswork, just logic and precision.</p>
         </div>
         <div class="comp-card">
           <div class="comp-icon-wrap"><i class="fas fa-code-branch"></i></div>
           <div class="comp-h">Git-First Mindset</div>
-          <p class="comp-p">Branching, PR reviews, conflict resolution, and clean commit history.</p>
+          <p class="comp-p">Branching, PRs, conflict resolution, and clean semantic commit history.</p>
         </div>
         <div class="comp-card">
           <div class="comp-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
           <div class="comp-h">Self-Directed Learner</div>
-          <p class="comp-p">Rapidly masters new frameworks through docs, community, and hands-on practice.</p>
+          <p class="comp-p">Rapidly masters frameworks through docs, community, and relentless practice.</p>
         </div>
         <div class="comp-card">
           <div class="comp-icon-wrap"><i class="fas fa-server"></i></div>
           <div class="comp-h">Systems Thinker</div>
-          <p class="comp-p">Understands the infrastructure beneath the app — shells, services, and storage.</p>
+          <p class="comp-p">Understands infrastructure beneath the app — shell, services, storage.</p>
         </div>
       </div>
 
@@ -276,15 +268,14 @@
 </section>
 
 
-<!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║  PAGE 3 · SKILLS                         ║ -->
-<!-- ╚══════════════════════════════════════════╝ -->
+<!-- ╔════════════════════════════════════╗ -->
+<!-- ║  PAGE 3 — SKILLS                  ║ -->
+<!-- ╚════════════════════════════════════╝ -->
 <section id="skills" class="page" aria-label="Technical Skills">
   <div class="container">
     <h2 class="section-title">Technical <span>Skills</span></h2>
     <div class="skills-3col">
 
-      <!-- Group 1 — Languages -->
       <div class="glass-card">
         <div class="skill-ghead">
           <span class="sg-icon"><i class="fas fa-code"></i></span>
@@ -321,7 +312,6 @@
         </div>
       </div>
 
-      <!-- Group 2 — Frameworks & Tools -->
       <div class="glass-card">
         <div class="skill-ghead">
           <span class="sg-icon"><i class="fas fa-cubes"></i></span>
@@ -359,7 +349,6 @@
         </div>
       </div>
 
-      <!-- Group 3 — Systems & Admin -->
       <div class="glass-card">
         <div class="skill-ghead">
           <span class="sg-icon"><i class="fas fa-terminal"></i></span>
@@ -398,34 +387,33 @@
 </section>
 
 
-<!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║  PAGE 4 · PROJECTS                       ║ -->
-<!-- ╚══════════════════════════════════════════╝ -->
+<!-- ╔════════════════════════════════════╗ -->
+<!-- ║  PAGE 4 — PROJECTS                ║ -->
+<!-- ╚════════════════════════════════════╝ -->
 <section id="projects" class="page" aria-label="Projects">
   <div class="container">
-
     <div class="proj-header-row">
       <h2 class="section-title" style="margin-bottom:0;">Projects &amp; <span>Experience</span></h2>
       <div class="pill-row">
         <button class="f-pill active" data-filter="all">All</button>
         <button class="f-pill" data-filter="web">Web</button>
-        <button class="f-pill" data-filter="sys">Systems</button>
+        <button class="f-pill" data-filter="sys">Programs</button>
       </div>
     </div>
 
     <div class="proj-grid">
 
-      <!-- ── Tabora Boys' School Website ── -->
+      <!-- Tabora Boys' School -->
       <div class="proj-card" data-cat="web">
         <div class="proj-banner">
           <span class="proj-icon"><i class="fas fa-school"></i></span>
         </div>
         <div class="proj-body">
-          <span class="proj-badge">Django · Full-Stack</span>
+          <span class="proj-badge">Django · Full-Stack · Live</span>
           <h3 class="proj-title">Tabora Boys' Secondary School Website</h3>
           <p class="proj-desc">
-            Designed and developed the official school website using <strong>Django</strong> —
-            responsive layout, dynamic content management, and optimised asset delivery.
+            Designed and built the official school website using <strong>Django</strong> —
+            responsive layout, dynamic content management, and optimised delivery.
           </p>
           <div class="proj-tags">
             <span class="proj-tag">Django</span>
@@ -439,7 +427,7 @@
         </div>
       </div>
 
-      <!-- ── Personal Portfolio ── -->
+      <!-- Portfolio -->
       <div class="proj-card" data-cat="web">
         <div class="proj-banner">
           <span class="proj-icon"><i class="fas fa-laptop-code"></i></span>
@@ -449,7 +437,7 @@
           <h3 class="proj-title">Personal Portfolio — elishastraton.org</h3>
           <p class="proj-desc">
             This horizontal book-style portfolio built from scratch — pure HTML, CSS &amp;
-            vanilla JS. Aurora mesh backgrounds, 3D page transitions, dark mode, glassmorphism.
+            vanilla JS. Dark/light mode, 3D transitions, glassmorphism, aurora animations.
           </p>
           <div class="proj-tags">
             <span class="proj-tag">HTML5/CSS3</span>
@@ -457,13 +445,13 @@
             <span class="proj-tag">GitHub Pages</span>
             <span class="proj-tag">Custom Domain</span>
           </div>
-          <a href="https://github.com/elishastraton" target="_blank" rel="noopener noreferrer" class="proj-link">
+          <a href="https://github.com/stratton6" target="_blank" rel="noopener noreferrer" class="proj-link">
             View on GitHub <i class="fas fa-arrow-right"></i>
           </a>
         </div>
       </div>
 
-      <!-- ── JA Digital Entrepreneurship ── -->
+      <!-- JA Program -->
       <div class="proj-card" data-cat="sys">
         <div class="proj-banner">
           <span class="proj-icon"><i class="fas fa-handshake"></i></span>
@@ -486,17 +474,17 @@
         </div>
       </div>
 
-      <!-- ── Full-Stack App in Progress ── -->
+      <!-- Django + React WIP -->
       <div class="proj-card" data-cat="web">
-        <div class="proj-banner" style="opacity:.7;">
+        <div class="proj-banner" style="opacity:.75;">
           <span class="proj-icon" style="opacity:.5;"><i class="fas fa-code-branch"></i></span>
         </div>
         <div class="proj-body">
           <span class="proj-badge">In Progress</span>
           <h3 class="proj-title">Django + React Full-Stack App</h3>
           <p class="proj-desc">
-            Exploring Django REST Framework with a React frontend — JWT auth,
-            PostgreSQL relational data, and CRUD operations at production quality.
+            Production-quality app exploring Django REST Framework with React frontend —
+            JWT auth, PostgreSQL relational data, and full CRUD operations.
           </p>
           <div class="proj-tags">
             <span class="proj-tag">Django REST</span>
@@ -513,15 +501,14 @@
 </section>
 
 
-<!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║  PAGE 5 · EDUCATION                      ║ -->
-<!-- ╚══════════════════════════════════════════╝ -->
+<!-- ╔════════════════════════════════════╗ -->
+<!-- ║  PAGE 5 — EDUCATION               ║ -->
+<!-- ╚════════════════════════════════════╝ -->
 <section id="education" class="page" aria-label="Education and Certifications">
   <div class="container">
     <h2 class="section-title">Education &amp; <span>Certifications</span></h2>
     <div class="edu-grid">
 
-      <!-- Timeline -->
       <div class="timeline">
 
         <div class="tl-item">
@@ -530,8 +517,9 @@
           <h3 class="tl-school">Tabora Boys' Secondary School</h3>
           <span class="tl-level">Advanced Level · Form V &amp; VI</span>
           <p class="tl-desc">
-            Concentrated in <strong>Advanced Mathematics, Physics &amp; Chemistry (PCM)</strong>.
-            Developed rigorous quantitative analysis and scientific problem-solving skills.
+            Completed Advanced Level studies. Built a strong foundation in
+            logical and analytical thinking that directly informs the way I approach
+            software engineering, problem solving, and system design.
             National ACSEE examinations completed — results pending.
           </p>
         </div>
@@ -542,14 +530,14 @@
           <h3 class="tl-school">Edmund Rice Sinon Secondary School</h3>
           <span class="tl-level">Ordinary Level · Form I — IV</span>
           <p class="tl-desc">
-            Completed CSEE with distinction. Active in science club exhibitions
-            and maths contests. Started independent programming and web dev exploration.
+            Completed CSEE with distinction. Active in science club and maths contests.
+            Began independent programming and web development exploration — the spark
+            that led to everything since.
           </p>
         </div>
 
       </div>
 
-      <!-- Certs -->
       <div class="cert-stack">
 
         <div class="cert-card">
@@ -557,16 +545,16 @@
           <div>
             <div class="cert-org">Junior Achievement Tanzania</div>
             <div class="cert-title">Digital Entrepreneurship Program</div>
-            <div class="cert-note">Completed curriculum on digital marketing, financial literacy &amp; tech-driven business. Served as Technical Lead.</div>
+            <div class="cert-note">Digital marketing, financial literacy &amp; tech-driven business. Technical Lead role.</div>
           </div>
         </div>
 
         <div class="cert-card">
           <div class="cert-ic"><i class="fab fa-linux"></i></div>
           <div>
-            <div class="cert-org">Self-Study · Linux Foundation Docs</div>
+            <div class="cert-org">Self-Study · Linux Foundation</div>
             <div class="cert-title">Linux System Administration</div>
-            <div class="cert-note">Shell config, storage, networking, service management on Fedora &amp; Ubuntu. Ongoing deep dive.</div>
+            <div class="cert-note">Shell config, networking, service management — Fedora &amp; Ubuntu. Ongoing deep-dive.</div>
           </div>
         </div>
 
@@ -575,7 +563,7 @@
           <div>
             <div class="cert-org">GitHub Learning Lab &amp; Practice</div>
             <div class="cert-title">Git &amp; GitHub Collaboration</div>
-            <div class="cert-note">Branching strategies, PR-based reviews, rebase workflows, conflict resolution, GitHub Actions fundamentals.</div>
+            <div class="cert-note">Branching, PR reviews, rebase workflows, conflict resolution, GitHub Actions.</div>
           </div>
         </div>
 
@@ -586,9 +574,9 @@
 </section>
 
 
-<!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║  PAGE 6 · CONTACT                        ║ -->
-<!-- ╚══════════════════════════════════════════╝ -->
+<!-- ╔════════════════════════════════════╗ -->
+<!-- ║  PAGE 6 — CONTACT                 ║ -->
+<!-- ╚════════════════════════════════════╝ -->
 <section id="contact" class="page" aria-label="Contact">
   <div class="container">
     <h2 class="section-title">Get In <span>Touch</span></h2>
@@ -610,7 +598,18 @@
             <div class="ci-ic"><i class="fas fa-envelope"></i></div>
             <div>
               <div class="ci-lbl">Email</div>
-              <div class="ci-val"><a href="mailto:contact@elishastraton.org">contact@elishastraton.org</a></div>
+              <div class="ci-val">
+                <a href="mailto:elishastraton1@gmail.com">elishastraton1@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-ic"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <div class="ci-lbl">WhatsApp</div>
+              <div class="ci-val">
+                <a href="https://wa.me/255747335883" target="_blank" rel="noopener">+255 747 335 883</a>
+              </div>
             </div>
           </div>
           <div class="ci-row">
@@ -623,9 +622,18 @@
         </div>
 
         <div class="socials-row">
-          <a href="https://github.com/elishastraton" target="_blank" rel="noopener" class="s-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/elishastraton" target="_blank" rel="noopener" class="s-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://taboraboys.org" target="_blank" rel="noopener" class="s-btn" aria-label="Tabora Boys School"><i class="fas fa-school"></i></a>
+          <a href="https://github.com/stratton6" target="_blank" rel="noopener" class="s-btn" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://wa.me/255747335883" target="_blank" rel="noopener" class="s-btn whatsapp" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://taboraboys.org" target="_blank" rel="noopener" class="s-btn" aria-label="Tabora Boys School">
+            <i class="fas fa-school"></i>
+          </a>
+          <a href="mailto:elishastraton1@gmail.com" class="s-btn" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
       </div>
 
@@ -633,21 +641,26 @@
       <div class="glass-card">
         <form id="contact-form" class="c-form" novalidate>
 
+          <!-- FormSubmit hidden fields -->
+          <input type="hidden" name="_subject"  value="New Portfolio Contact">
+          <input type="hidden" name="_template" value="box">
+          <input type="hidden" name="_captcha"  value="false">
+
           <div class="fg">
             <label class="fl" for="f-name">Full Name</label>
-            <input  id="f-name"  type="text"  class="fc" placeholder="Your full name">
+            <input id="f-name" type="text" class="fc" placeholder="Your full name" name="name">
             <span class="err-msg"></span>
           </div>
 
           <div class="fg">
             <label class="fl" for="f-email">Email Address</label>
-            <input  id="f-email" type="email" class="fc" placeholder="your@email.com">
+            <input id="f-email" type="email" class="fc" placeholder="your@email.com" name="email">
             <span class="err-msg"></span>
           </div>
 
           <div class="fg">
             <label class="fl" for="f-msg">Message</label>
-            <textarea id="f-msg" class="fc" rows="4" placeholder="Tell me about your project or opportunity…"></textarea>
+            <textarea id="f-msg" class="fc" rows="4" placeholder="Tell me about your project or opportunity…" name="message"></textarea>
             <span class="err-msg"></span>
           </div>
 
@@ -661,11 +674,10 @@
 
     </div>
 
-    <!-- Footer strip -->
     <div class="pg-footer">
       <div class="footer-brand">ELISHA STRATON KIMARIO</div>
       <div class="footer-meta">
-        &copy; 2026 · Crafted with <i class="fas fa-heart"></i> in Arusha, Tanzania · All rights reserved.
+        &copy; 2026 · Crafted with <i class="fas fa-heart"></i> in Arusha, Tanzania
       </div>
     </div>
 
