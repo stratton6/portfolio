@@ -92,12 +92,12 @@
    RESET
 ═══════════════════════════════════════ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{overflow:hidden;width:100vw;height:100vh;}
+html{overflow:hidden;width:100vw;height:100vh;height:100dvh;}
 body{
   font-family:var(--f-sans);
   background:var(--bg);
   color:var(--tx-1);
-  width:100vw;height:100vh;overflow:hidden;
+  width:100vw;height:100vh;height:100dvh;overflow:hidden;
   line-height:1.65;
   transition:background var(--t-slow),color var(--t-slow);
 }
@@ -195,7 +195,7 @@ input,textarea,button,select{font-family:inherit;}
    HORIZONTAL SLIDER
 ═══════════════════════════════════════ */
 .viewport-wrapper{
-  position:relative;width:100vw;height:100vh;overflow:hidden;z-index:5;
+  position:relative;width:100vw;height:100vh;height:100dvh;overflow:hidden;z-index:5;
 }
 .pages-wrapper{
   display:flex;width:600vw;height:100%;
@@ -203,7 +203,7 @@ input,textarea,button,select{font-family:inherit;}
   will-change:transform;
 }
 .page{
-  width:100vw;height:100vh;flex-shrink:0;
+  width:100vw;height:100vh;height:100dvh;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
   padding:calc(var(--nav-h)+32px) 5rem 40px;
   overflow-y:auto;overflow-x:hidden;position:relative;
@@ -626,7 +626,10 @@ textarea.fc{resize:vertical;}
   .f-chip-3{right:-20px;}
   .skills-3col{grid-template-columns:1fr;}
   .comp-grid{grid-template-columns:1fr;}
-  .page{padding:calc(var(--nav-h)+18px) 1.5rem 28px;}
+  .page{
+    display:block; /* Prevent flex centering cutoff */
+    padding:calc(var(--nav-h)+24px) 1.5rem 40px;
+  }
   .page-arrow{display:none;}
   .section-title{margin-bottom:35px;}
 }
@@ -644,7 +647,10 @@ textarea.fc{resize:vertical;}
   .socials-row{justify-content:center;}
 }
 @media(max-width:480px){
-  .page{padding:calc(var(--nav-h)+15px) 1rem 20px;}
+  .page{
+    display:block;
+    padding:calc(var(--nav-h)+18px) 1.2rem 40px;
+  }
   .hero-photo-wrap{width:220px;height:280px;}
   .f-chip{transform:scale(0.85); transform-origin:center;}
   .f-chip:hover{transform:scale(0.9);}
