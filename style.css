@@ -383,13 +383,19 @@ h1,h2,h3,h4,h5,h6{font-family:var(--f-head);font-weight:700;letter-spacing:.8px;
 .hero-ctas{display:flex;flex-wrap:wrap;gap:13px;animation:fadeSlideUp .7s var(--ease) .48s both;}
 
 .hero-stats{
-  display:flex;gap:0;margin-top:40px;
+  display:flex;gap:0;margin-top:40px;flex-wrap:wrap;
   background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);
   overflow:hidden;backdrop-filter:blur(14px);
   animation:fadeSlideUp .7s var(--ease) .6s both;box-shadow:var(--shadow);
 }
-.h-stat{flex:1;padding:16px 20px;text-align:center;border-right:1px solid var(--border);transition:background var(--t-mid);}
-.h-stat:last-child{border-right:none;}
+.h-stat{flex:1;min-width:40%;padding:16px 20px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background var(--t-mid);}
+.h-stat:nth-child(even){border-right:none;}
+.h-stat:nth-child(3), .h-stat:nth-child(4){border-bottom:none;}
+@media(min-width:769px){
+  .h-stat{min-width:auto;border-bottom:none;}
+  .h-stat:nth-child(even){border-right:1px solid var(--border);}
+  .h-stat:last-child{border-right:none;}
+}
 .h-stat:hover{background:var(--g-soft);}
 .h-stat-num{display:block;font-family:var(--f-head);font-size:1.4rem;font-weight:800;background:var(--g-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .h-stat-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--tx-3);}
@@ -607,26 +613,48 @@ textarea.fc{resize:vertical;}
 /* ═══════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════ */
-@media(max-width:1100px){.skills-3col{grid-template-columns:repeat(2,1fr);}.proj-grid{grid-template-columns:1fr;}}
+@media(max-width:1100px){
+  .skills-3col{grid-template-columns:repeat(2,1fr);}
+  .proj-grid{grid-template-columns:1fr;}
+}
 @media(max-width:960px){
   .hero-grid,.about-grid,.edu-grid,.contact-grid{grid-template-columns:1fr;gap:28px;}
-  .hero-visual{order:-1;}.hero-photo-wrap{width:240px;height:300px;}
-  .skills-3col{grid-template-columns:1fr;}.comp-grid{grid-template-columns:1fr;}
-  .page{padding:calc(var(--nav-h)+18px) 2rem 28px;}.page-arrow{display:none;}
+  .hero-visual{order:-1;margin-bottom:20px;}
+  .hero-photo-wrap{width:260px;height:320px;}
+  .f-chip-1{top:-10px;right:-10px;}
+  .f-chip-2{bottom:10px;left:-20px;}
+  .f-chip-3{right:-20px;}
+  .skills-3col{grid-template-columns:1fr;}
+  .comp-grid{grid-template-columns:1fr;}
+  .page{padding:calc(var(--nav-h)+18px) 1.5rem 28px;}
+  .page-arrow{display:none;}
+  .section-title{margin-bottom:35px;}
 }
 @media(max-width:768px){
   .menu-btn{display:flex;}
   .nav-menu{position:fixed;top:0;right:-110%;width:75%;max-width:280px;height:100vh;background:var(--surface-b);backdrop-filter:blur(28px);border-left:1px solid var(--border);flex-direction:column;justify-content:center;align-items:center;gap:32px;z-index:1050;transition:right .5s cubic-bezier(.77,.2,.05,1);box-shadow:-8px 0 30px rgba(0,0,0,.1);}
   .nav-menu.open{right:0;}
   .nav-link{font-size:.95rem;}
-  .hero-h1{font-size:2.1rem;}
-  .h-stat{border-right:none;border-bottom:1px solid var(--border);}
-  .h-stat:last-child{border-bottom:none;}
+  .hero-h1{font-size:clamp(2.2rem, 8vw, 3rem);}
   .page-dots{display:none;}
+  .about-detail-row{justify-content:center;}
+  .a-pill{font-size:.7rem;padding:5px 12px;}
+  .contact-grid{gap:32px;}
+  .ci-row{padding:10px 14px;}
+  .socials-row{justify-content:center;}
 }
 @media(max-width:480px){
-  .page{padding:calc(var(--nav-h)+10px) 1rem 20px;}
-  .hero-photo-wrap{width:200px;height:250px;}
-  .hero-ctas{flex-direction:column;}.hero-ctas .btn{width:100%;justify-content:center;}
+  .page{padding:calc(var(--nav-h)+15px) 1rem 20px;}
+  .hero-photo-wrap{width:220px;height:280px;}
+  .f-chip{transform:scale(0.85); transform-origin:center;}
+  .f-chip:hover{transform:scale(0.9);}
   .f-chip-3{display:none;}
+  .hero-ctas{flex-direction:column;}
+  .hero-ctas .btn{width:100%;justify-content:center;}
+  .glass-card{padding:20px;}
+  .proj-body{padding:16px;}
+  .timeline::before{left:4px;}
+  .tl-node{left:-28px; width:14px; height:14px;}
+  .cert-card{flex-direction:column; align-items:center; text-align:center;}
+  .cert-ic{margin-bottom:8px;}
 }
