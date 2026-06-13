@@ -78,6 +78,9 @@
     if (aL) aL.classList.toggle('show', current > 0);
     if (aR) aR.classList.toggle('show', current < TOTAL - 1);
 
+    const ms = $('mobile-swipe');
+    if (ms) ms.classList.toggle('hide', current === TOTAL - 1);
+
     if (idx === 2) animateSkillBars(); else resetSkillBars();
   }
 
